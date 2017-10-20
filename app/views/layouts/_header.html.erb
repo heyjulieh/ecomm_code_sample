@@ -10,9 +10,10 @@
       <%if signed_in?%>
         <%= link_to cart_path, :class => "nav navbar-nav navbar-right pull-right" do%>
           <%if current_user.cart_count == 1%>
-           <span class="cart-count"><%=current_user.cart_count%></span> item in cart
-          <% end %>
-          <span class="cart-count"><%=current_user.cart_count%></span> items in cart
+            <span class="cart-count"><%=current_user.cart_count%></span> item in cart
+          <%else%>
+            <span class="cart-count"><%=current_user.cart_count%></span> items in cart
+          <%end%>
         <%end%>
       <%else%>
       <ul class="nav navbar-nav navbar-right pull-right">
