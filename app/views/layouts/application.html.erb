@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "jowljabber store" %></title>
+    <%= include_gon %>
+    <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= render "layouts/header" %>
+    <%= render "layouts/alerts" %>
+
+    <div id="main-content" class="row full-min-height">
+      <%= yield %>
+    </div>
+    <div class="push"></div>
+    </div>
+    <footer class="row">
+      <div class="social">
+        <a href="https://www.facebook.com/jeffl1nen"><i class="fa fa-facebook-official"></i></a>
+        <a href="https://twitter.com/OpenHouseOG"><i class="fa fa-twitter-square"></i></a>
+        <a href="https://instagra.com/l1nerd"><i class="fa fa-instagram"></i></a><br />
+      </div>
+        <h6>All of the items on this site are 100% authentic. All items are marked either new or used, and do list the condition. Please make sure you read the entire description of the specific item before you message me or make your purchase. All sales are final which means NO refunds. Some items do come with receipts; however, this is not guaranteed. If you have any questions or want more information regarding any of the items, please feel free to DM me on instagram, tweet me, or email me. Prices are negotiable to some extent but I usually don’t go any lower since I usually price lower than most sellers.<br /><br />
+            Read my blog, follow me on instagram or twitter for the latest news on my favorite drops and things I’m selling. Peace.</h6>
+        <p>© Jowljabber x JH 2017</p>
+      </div>
+
+    </footer>
+  </body>
+</html>

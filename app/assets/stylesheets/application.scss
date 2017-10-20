@@ -1,0 +1,542 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+$light-red: #EB5757;
+$light-black: #222222;
+$baby-green: #B5DED5;
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+body {
+  background-color: $light-black;
+  height: 100%;
+}
+.row {
+  margin: 0;
+}
+nav.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 0;
+  margin: auto;
+  text-transform: lowercase;
+  .navbar-brand{
+    .logo {
+      height: 25px;
+    }
+  }
+  a.navbar-nav {
+    display: inline-block;
+    margin: auto;
+    padding: 15px;
+    color: $baby-green;
+  }
+  a.navbar-nav:hover {
+    text-decoration: none;
+    color: $light-red;
+  }
+  @media (min-width: 768px) {
+    .nav-center {
+      width: 67%;
+      text-align: center;
+      vertical-align: center;
+      > li {
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+  .cart-count {
+    color: $baby-green;
+  }
+  .cart-count:hover {
+    color: white;
+  }
+  .nav-center {}
+}
+.jumbotron {
+  background-image: url('https://static1.squarespace.com/static/572cff1f859fd009b42eb945/t/573135cf7c65e4d72b386a2c/1462842836988/Illest-Sneakers-Banner-Content.png?format=1500w');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: 90% 50%;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  div {
+    padding-left: 15px;
+    a {
+      h1 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+      }
+      h1:hover {
+        color: $light-black;
+      }
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+#shoes {
+  background-image: url('https://cdn5.kicksonfire.com/wp-content/uploads/2015/11/adidas-Yeezy-Boost-350-Moonrock-Lead.jpg?x77385');
+}
+#tops {
+  background-image: url('http://www.projectblitz.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/u/supreme_20motion_20hood_20navy_20blitz1.jpg');
+  background-position: 50% 70%;
+  h1:hover {
+    color: $light-red;
+  }
+}
+#bottoms {
+  background-image: url('https://www.stadiumgoods.com/media/catalog/product/cache/1/base/1000x600/9df78eab33525d08d6e5fb8d27136e95/s/u/su1936_2.png');
+  background-position: 50% 100%;
+  h1 {
+    color: $light-red;
+  }
+  h1:hover {
+    color: darkgrey;
+  }
+}
+#accessories {
+  background-image: url('http://www.projectblitz.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/u/supreme_20beachball_20blitz2.jpg');
+  background-position: 50% 40%;
+  h1 {
+    color: $light-black;
+  }
+  h1:hover {
+    color: darkgrey;
+  }
+}
+#toys {
+  background-image: url('https://www.high.org/wp-content/uploads/2017/01/kaws-teaser.jpg');
+  background-position: 50% 55%;
+  h1 {
+    color: $light-black;
+  }
+  h1:hover {
+    color: $light-red;
+  }
+}
+
+.subsection {
+  padding-top: 35px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: $light-red;
+}
+.featured {
+  background-color: $light-black;
+  width: 100%;
+  padding: 0 0 50px 0;
+    .items {
+    text-align: center;
+    height: 200px;
+    margin-bottom: 15px;
+    .image-box {
+      height: 120px;
+      background-color: white;
+      overflow: hidden;
+      .price {
+        position: absolute;
+        right: 15px;
+        top: 85px;
+        padding-right: 10px;
+        padding-left: 10px;
+        background-color: black;
+        color: white;
+      }
+      .item-images {
+        img {
+          position: relative;
+          display: inline-block;
+          height: 100px;
+        }
+      }
+    }
+    .item-info {
+      height: 80px;
+      padding: 7px;
+      background-color: lightgrey;
+      a {
+        color: $light-black;
+      }
+      a:hover {
+        color: $light-black;
+        text-decoration: none;
+      }
+      h5 {
+        text-align: left;
+        margin: auto;
+        padding: 0px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      h6 {
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 10px;
+      }
+      p {
+        font-size: 85%;
+        text-align: left;
+        margin: auto;
+        padding: 0px;
+        text-transform: lowercase;
+      }
+    }
+  }
+}
+.show {
+  padding-top: 35px;
+  background-color: white;
+  padding-bottom: 50px;
+  height: 90vh;
+  .large-image-box {
+    img {
+      width: 100%;
+    }
+  }
+  .show-item-info {
+    h3 {
+      text-transform: uppercase;
+      color: $light-red;
+      letter-spacing: 3px;
+    }
+    .btn-danger {
+      display: inline-block;
+      padding: 10px;
+      margin-top: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited {
+      text-decoration: none;
+      color: black;
+    }
+    .btn {
+      display: inline-block;
+      background-color: $baby-green;
+      color: $light-black;
+      font-weight: bold;
+      border-radius: 0;
+      letter-spacing: 1px;
+    }
+    h5 {
+      text-transform: uppercase;
+    }
+  }
+}
+.form {
+  width: 100%;
+  padding-bottom: 20px;
+  margin: auto;
+  color: white;
+  text-transform: uppercase;
+  h2 {
+    display: inline-block;
+    letter-spacing: 7px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: $light-red;
+  }
+
+  .col {
+    margin: auto;
+    padding: 0;
+  }
+  form {
+    background-color: $light-black;
+    input {
+      width: 100%;
+      margin-bottom: 20px;
+      border: 0px;
+      padding: 5px;
+      font-weight: 300;
+      color: black;
+    }
+    #user_remember_me {
+      display: inline-block;
+      width: 15px;
+      margin-right: 5px;
+    }
+    .letsgo {
+      background-color: $baby-green;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 30px;
+      padding: 5px;
+      border-radius: 3px;
+    }
+    .letsgo:hover {
+      color: $light-red;
+    }
+    .date {
+      margin-bottom: 20px;
+    }
+    i {
+      font-size: 10px;
+      color: grey;
+    }
+    select {
+      background-color: white;
+      color: black;
+      font-weight: 300;
+    }
+    .actions {
+      width: 100%;
+      padding: 0;
+      margin: 30px 0px 0px 0px;
+      input {
+        border-radius: 5px;
+        border: 0px;
+        text-transform: uppercase;
+        background-color: $baby-green;
+        color: $light-black;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      input:hover {
+        color: $light-red;
+      }
+    }
+  }
+  .fa {
+    color: $light-red;
+  }
+  .back {
+    display: inline-block;
+    color: $light-red;
+    font-size: 11px;
+    margin-top: 20px;
+      a {
+      color: white;
+      }
+      a:hover {
+        color: $light-red;
+        text-decoration: none;
+      }
+  }
+  .back:hover {
+    color: white;
+    text-decoration: none;
+  }
+  #cancel {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    p {
+      margin: 0px;
+      padding: 0px 0px 10px 0px;
+      font-size: 10px;
+    }
+    .btn {
+      color: black;
+      background-color: darkgrey;
+      padding: 5px;
+      margin: 0px;
+      font-size: 10px;
+      text-transform: lowercase;
+    }
+    .btn:hover {
+      color: white;
+    }
+  }
+}
+.mycart {
+  padding-bottom: 50px;
+  background-color: white;
+  .sample {
+    img {
+      display: inline-block;
+      width: 100%;
+      vertical-align: middle;
+      margin: auto;
+      padding: auto;
+    }
+  }
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: $light-red
+  }
+  h5.no-items {
+    display:inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $light-black;
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+  h6.no-items {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 200;
+    color: $light-red;
+    margin-bottom: 15px;
+  }
+  .cart-amount {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    span {
+      display: inline-block;
+      border-radius: 5px;
+      background-color: $light-black;
+      color: white;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: 5px;
+    }
+  }
+  .cart-item {
+    margin-top: 40px;
+    .cart-image {
+      img {
+        width: 100%;
+      }
+    }
+    .cart-info {
+      color: $light-black;
+      h4 {
+        text-transform: uppercase;
+        color: $light-red;
+      }
+      h4:hover {
+        color: $light-black;
+      }
+      .btn {
+        background-color: $light-black;
+        color: white;
+        border-radius: 0px;
+        padding: 7px;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+      .fa {
+        display: inline-block;
+        color: grey;
+      }
+      a {
+        color: grey;
+      }
+      a:hover {
+        color: $light-red;
+        text-decoration: none;
+      }
+    }
+    .cart-money {
+      color: black;
+    }
+  }
+  .btn {
+    background-color: $baby-green;
+    color: $light-black;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .pull-right {
+    text-align: right;
+  }
+}
+.summary_header {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 20px;
+}
+.payment {
+  background-color: white;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  h2 {
+    text-transform: uppercase;
+  }
+  .mbs {
+    font-weight: 200;
+    font-size: 16px;
+  }
+  .summary {
+    margin-bottom: 50px;
+    a {
+      text-transform: uppercase;
+      color: $light-red;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .price {
+      width: 100%;
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid lightgrey;
+      margin-bottom: 10px;
+    }
+  }
+  form{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    p {
+      padding-bottom: 15px;
+      font-weight: 200;
+      font-size: 16px;
+    }
+    .customer_form {
+      width: 100%;
+      margin: 0px 0px 20px 0px;
+      padding: 0px;
+      font-size: 16px;
+      input {
+        margin-bottom: 10px;
+        border: 0px;
+        font-weight: 200;
+        border-bottom: 1px solid lightgrey;
+        width: 100%;
+        padding: 20px 15px 15px 15px;
+        margin: 0px;
+        color: #283036;
+      }
+    }
+    .btn {
+      margin-top: 20px;
+      background-color: $baby-green;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .btn:hover {
+      color: $light-red;
+    }
+  }
+}
+
+footer {
+  padding: 15px;
+  background-color: lightgrey;
+  .social {
+    .fa {
+      padding: 5px;
+      font-size: 28px;
+      color: $light-black;
+    }
+  }
+  h6 {
+    color: $light-black;
+  }
+  p {
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img class="logo" src="<%= asset_path( 'monster.svg' ) %>" /></a>
+      <ul class="nav navbar-nav keep">
+        <%if signed_in?%>
+          <li class="cart">
+           <%= link_to cart_path do%>
+              <%if current_user.cart_count < 1%>
+               <span class="cart-count"><%=current_user.cart_count%> item in cart</span>
+              <% end %>
+              <span class="cart-count"><%=current_user.cart_count%> items in cart</span>
+           <%end%>
+          </li>
+
+          <li class="dropdown">
+            <%=link_to edit_user_registration_path, :class=> "dropdown-toggle", 'data-toggle' => 'dropdown' do%>hi, <%=current_user.first_name %>!<span class="caret"></span>
+            <%end%>
+            <ul class="dropdown-menu">
+              <li>
+                <%=link_to edit_user_registration_path do%>
+                  Your Settings
+                <%end%>
+              </li>
+              <li><%=link_to "sign out", destroy_user_session_path, method: :delete%></li>
+            </ul>
+          </li>
+        <%else%>
+          <li><%=link_to "sign up", new_user_registration_path%></li>
+          <li><%=link_to "sign in", new_user_session_path%></li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="/categories/shoes">Shoes</a></li>
+        <li><a href="/categories/tops">Tops</a></li>
+        <li><a href="/categories/bottoms">Bottoms</a></li>
+        <li><a href="/categories/accessories">Accessories</a></li>
+        <li><a href="/categories/toys">Toys</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

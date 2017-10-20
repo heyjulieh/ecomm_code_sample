@@ -1,0 +1,52 @@
+<%= render "layouts/jumbotron" %>
+
+<div id="mycart" class="container-fluid mycart">
+  <h3>Your Cart</h3>
+  <p class="cart-amount">Total Items In Your Cart: <span id="cart-count" class="cart-count"><%=current_user.cart_count%></span></p>
+  <% if current_user.cart_count==0 %>
+    <h5 class="no-items">You currently do not have any items in your cart.</h5><br />
+    <h6 class="no-items">Recommended items:</h6>
+    <div class="sample">
+      <div class="row">
+        <% @sample.each do |item|%>
+        <div class="col col-sm-2 col-md-2">
+          <%=link_to item do%>
+            <%=image_tag item.images[0] %>
+          <%end%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col col-sm-8 col-md-8">
+      <% @cart_items.each do |item|%>
+      <div class="cart-item row">
+        <div class="col col-xs-2 col-sm-4 cart-image">
+          <%=link_to item do%>
+            <%=image_tag item.images[0] %>
+          <%end%>
+        </div>
+        <div class="col col-xs-8 col-sm-6 cart-info">
+          <%=link_to item do%>
+            <h4> <%= item.brand %> <%= item.release_year %></h4>
+          <%end%>
+          <p><%= item.colorway %> <%= item.description %></p>
+          <p><%= item.size %></p>
+          <p class="btn">$ <%= item.price %></p><br />
+          <%=link_to "remove", data: {targetUrl: remove_from_cart_path(item)} do%>
+            <i class="fa fa-times-circle"></i>
+          <%end%>
+        </div>
+      </div><br /><br />
+      <%end%>
+    </div>
+
+    <div class="col col-sm-4 col-md-4 pull-right">
+      <% if current_user.cart_count != 0%>
+        <p class>Total amount: $<span class="cart-money"><%=current_user.cart_total_price %></span></p>
+        <%=link_to "Checkout", new_transaction_path, class: "btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
