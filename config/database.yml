@@ -52,4 +52,3 @@ production:
   database: jowljabberstore_production
   username: jowljabberstore
   password: <%= ENV['JOWLJABBERSTORE_DATABASE_PASSWORD'] %>
-  adapter: mysql2
