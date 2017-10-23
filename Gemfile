@@ -69,6 +69,7 @@ gem "font-awesome-rails"
 gem 'braintree', '~> 2.78.0'
 gem 'figaro', '~> 1.1.1'
 gem 'gon', '~> 6.2.0'
+gem 'activerecord-mysql2-adapter'
 
 source "https://rubygems.org"
 ruby "2.4.0"
