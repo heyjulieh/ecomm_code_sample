@@ -18,6 +18,10 @@ class User < ApplicationRecord
     Item.find(cart_ids)
   end
 
+  def has_payment_info?
+    braintree_customer_id
+  end
+
   def purchase_cart_items!
     get_cart_items.each { |item| purchase(item) }
     $redis.del "cart#{id}"
@@ -31,9 +35,6 @@ class User < ApplicationRecord
     items.include?(item)
   end
 
-  def has_payment_info?
-    braintree_customer_id
-  end
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

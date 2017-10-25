@@ -14,15 +14,16 @@ class TransactionsController < ApplicationController
                   amount: current_user.cart_total_price,
                   payment_method_nonce: params[:payment_method_nonce],
                   customer: {
-                    first_name: current_user.first_name,
-                    last_name: current_user.last_name,
-                    street_address: current_user.street_address,
-                    city_address: current_user.city_address,
-                    state: current_user.state,
-                    country: current_user.country,
-                    zip_code: current_user.zip_code,
+                    first_name: params[:first_name],
+                    last_name: params[:last_name],
+                    # street_address: params[:street_address],
+                    # extended_address: params[:extended_address],
+                    # locality: params[:locality],
+                    # region: params[:region],
+                    # country_code_alpha2: params[:country_code_alpha2],
+                    # postal_code: params[:postal_code],
                     email: current_user.email,
-                    phone: current_user.phone
+                    phone: params[:phone]
                   },
                   options: {
                     store_in_vault: true
