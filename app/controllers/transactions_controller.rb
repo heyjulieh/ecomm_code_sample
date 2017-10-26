@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_cart!
+  before_action :check_cart
 
   def new
     gon.client_token = generate_client_token
@@ -36,13 +36,18 @@ class TransactionsController < ApplicationController
 
     if @result.success?
       current_user.update(braintree_customer_id: @result.transaction.customer_details.id) unless current_user.has_payment_info?
+      puts @result.params
       current_user.purchase_cart_items!
-      redirect_to root_url, notice: "Your transaction was successful."
+      order_id = @result.transaction.order_id
+      redirect_to summary_path, notice: "Your transaction was successful. Order id: #{@result.params}"
+
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
       gon.client_token = generate_client_token
       render :new
     end
+  end
+  def summary
   end
 
 private
@@ -54,9 +59,9 @@ private
     end
   end
 
-  def check_cart!
+  def check_cart
    if current_user.get_cart_items.blank?
-     redirect_to root_url, alert: "Please add some items to your cart before processing your transaction!"
+     flash[:alert] = "Please add some items to your cart before processing your transaction!"
    end
   end
 

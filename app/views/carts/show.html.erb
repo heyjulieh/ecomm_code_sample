@@ -9,10 +9,12 @@
     <div class="sample">
       <div class="row">
         <% @sample.each do |item|%>
-        <div class="col col-sm-2 col-md-2">
-          <%=link_to item do%>
-            <%=image_tag item.images[0] %>
-          <%end%>
+        <div class="col col-xs-6 col-sm-2 col-md-2">
+          <div class="row">
+            <%=link_to item do%>
+              <%=image_tag item.images[0] %>
+            <%end%>
+          </div>
         </div>
         <% end %>
       </div>
@@ -22,12 +24,12 @@
     <div class="col col-sm-8 col-md-8">
       <% @cart_items.each do |item|%>
       <div class="cart-item row">
-        <div class="col col-xs-2 col-sm-4 cart-image">
+        <div class="col col-xs-5 col-sm-3 cart-image">
           <%=link_to item do%>
             <%=image_tag item.images[0] %>
           <%end%>
         </div>
-        <div class="col col-xs-8 col-sm-6 cart-info">
+        <div class="col col-xs-7 col-sm-6 cart-info">
           <%=link_to item do%>
             <h4> <%= item.brand %> <%= item.release_year %></h4>
           <%end%>
@@ -42,7 +44,7 @@
       <%end%>
     </div>
 
-    <div class="col col-sm-4 col-md-4 pull-right">
+    <div class="col col-sm-3 pull-right">
       <% if current_user.cart_count != 0%>
         <p class>Total amount: $<span class="cart-money"><%=current_user.cart_total_price %></span></p>
         <%=link_to "Checkout", new_transaction_path, class: "btn" %>

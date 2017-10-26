@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :transactions, only: [:new, :create]
+  resources :transactions, only: [:new, :create, :summary]
+  get '/transactions/summary', to: 'transactions#summary', as: 'summary'
   resource :cart, only: [:show] do
     put 'add/:item_id', to: 'carts#add', as: :add_to
     put 'remove/:item_id', to: 'carts#remove', as: :remove_from
