@@ -4,3 +4,8 @@
 $ ->
   unless typeof gon is 'undefined'
     braintree.setup(gon.client_token, 'dropin', { container: 'dropin' });
+
+$(window).load ->
+    container = $(".alert").html()
+    if container.indexOf('add some') > -1
+      $(".payment").addClass('hidden');

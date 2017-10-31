@@ -6,6 +6,16 @@ $light-red: #EB5757;
 $light-black: #222222;
 $baby-green: #B5DED5;
 
+.alert {
+  background-color: white;
+  text-transform: uppercase;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0px;
+  width: 100%;
+}
 .wrapper {
   min-height: 100%;
   height: auto !important;
@@ -53,11 +63,51 @@ nav.navbar {
   }
   .cart-count {
     color: $baby-green;
+    font-size: 10px;
+    top: -8px;
+    position:relative;
   }
   .cart-count:hover {
     color: white;
   }
-  .nav-center {}
+  .navbar-toggle {
+    border: none;
+    background: transparent !important;
+    margin-right: 0px;
+    &:hover {
+      background: transparent !important;
+    }
+    .icon-bar {
+      width: 22px;
+      transition: all 0.2s;
+    }
+    .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%;
+    }
+    .middle-bar {
+      opacity: 0;
+    }
+    .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%;
+    }
+
+    &.collapsed {
+      .top-bar {
+        transform: rotate(0);
+      }
+      .middle-bar {
+        opacity: 1;
+      }
+      .bottom-bar {
+        transform: rotate(0);
+      }
+    }
+  }
+  .fa {
+    font-size: 18px;
+  }
 }
 .jumbotron {
   background-image: url('https://static1.squarespace.com/static/572cff1f859fd009b42eb945/t/573135cf7c65e4d72b386a2c/1462842836988/Illest-Sneakers-Banner-Content.png?format=1500w');
@@ -457,7 +507,6 @@ nav.navbar {
 .payment {
   background-color: white;
   width: 100%;
-  padding-bottom: 30px;
   padding-top: 30px;
   h2 {
     text-transform: uppercase;

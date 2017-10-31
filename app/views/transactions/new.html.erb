@@ -26,7 +26,7 @@
             <p>Please enter your billing information:</p>
             <div id="dropin"></div>
             <%= render 'customer_form' unless current_user.has_payment_info? %>
-            <%=submit_tag "Submit Payment", class: "btn" %>
+            <%=submit_tag "Confirm Payment", class: "btn" %>
           <%end%>
         </div>
       </div>
