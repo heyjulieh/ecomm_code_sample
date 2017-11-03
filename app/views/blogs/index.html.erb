@@ -1,0 +1,57 @@
+<%= render "layouts/jumbotron-blog" %>
+
+<p id="notice"><%= notice %></p>
+
+<div id="blog-container" class="container-fluid blog wrapper">
+  <div class="new-post">
+    <button class="btn">
+      <i class="fa fa-plus"></i> <%= link_to 'Post a New Blog', new_blog_path %>
+    </button>
+  </div>
+  <div class="row">
+    <% @blogs.each do |blog| %>
+        <div class="col col-sm-6 col-md-4 col-lg-3 blog-item">
+          <h4>
+            <%= link_to blog, :class => "title" do %>
+              <%= blog.title %>
+            <% end %>
+          </h4>
+          <div class="content-area">
+            <div id="<%= blog.id%>" class="carousel slide">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active blog-index" style="background-image: url(<%= blog.images[0] %>)">
+              </div>
+              <div class="item blog-index" style="background-image: url(<%= blog.images[1] %>)">
+              </div>
+              <div class="item blog-index" style="background-image: url(<%= blog.images[2] %>)">
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#<%= blog.id%>" data-slide="prev">
+            <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#<%= blog.id%>" data-slide="next">
+            <span class="icon-next"></span>
+          </a>
+        </div>
+        <div class="content" id="content">
+          <p class="content"><%= h truncate(blog.content, :length => 490, :separator => ' ') %>...</p>
+          <p>
+          <%= link_to 'Read More', blog %> <i class="fa fa-arrow-right"></i><br />
+          </p>
+          <h6>Posted on: <%= blog.created_at.strftime("%m/%d/%Y %I:%M %p") %></h6>
+          <h6>Category: <%= blog.category %></h6>
+          <h6><i class="fa fa-tags"></i> <%= blog.tags[0] %>, <%= blog.tags[1] %>, <%= blog.tags[2] %>, <%= blog.tags[3] %></h6>
+          <div class="pull-right">
+            <i class="fa fa-pencil"></i> <%= link_to 'Edit This', edit_blog_path(blog) %><br />
+            <i class="fa fa-times"></i> <%= link_to 'Delete This', blog, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

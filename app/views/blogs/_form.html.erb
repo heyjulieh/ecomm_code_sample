@@ -1,0 +1,65 @@
+<%= form_with(model: blog, local: true) do |form| %>
+  <% if blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :blog_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :blog_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :blog_category %>
+  </div>
+
+  <% if request.original_fullpath == '/blogs/new' %>
+    <div class="field">
+      <%= form.label :images %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :tags %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: "" %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[0] %>
+    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[1] %>
+    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[2] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[0] %>
+    <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[1] %>
+    <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[2] %>
+    <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[3] %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit class: 'btn' %>
+  </div>
+<% end %>

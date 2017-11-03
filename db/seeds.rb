@@ -128,3 +128,63 @@ items = Item.create([
     tags: ["shoes", "mid", "green", "adidas", "ultra boost", "ultraboost", "mid green night", "green night", "ultra boost mid", "ultraboost mid", "adidas ultra boost", "adidas ultraboost", "adidas ultra boost mid green", "adidas ultra boost mid green night" "ultra boost green", "green ultra boost", "green ultraboost", "green ultra boost"]
   },
 ])
+
+Blog.destroy_all
+blogs = Blog.create([
+  {
+    title: "Supreme is the shit",
+    content: "I've been in love with Supreme since I was in middle school. While I wasn't a skater, the allure of it's grit, guerilla marketing, ultimate cool, really had me drooling at every drop. Back then, I couldn't afford it-- and was super excited when I got my hands on something finally. It was the Kate Moss x Supreme white picture tee. It was super covetted and to this day-- is still covetted. Today, I'm more than excited about how luxe it's come-- but still staying true to skate culture and grit.",
+    category: "Fashion",
+    images: ["https://i.ytimg.com/vi/1ra2AI5WqzI/maxresdefault.jpg", "https://nssdata.s3.amazonaws.com/images/galleries/11290/supreme-x-louis-vuitton.jpg", "https://img00.deviantart.net/c15c/i/2013/105/5/0/red_sky_at_night_shepherds_supreme_by_mrmoodys-d61sza5.jpg"],
+    tags: ["Supreme", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "Bape is holding on for dear life",
+    content: "When I was a kid, I'd always wanted something Bape. So the first time, I went to Japan, I made sure I copped something-- a keychain. Yeah, it was tiny and the only thing I could afford at the time. I told myself that when I got richer, I'd be back for the shark camo hoodie. To my surprise, Bape died out and it broke my heart. And then it came back-- and I was excited-- and I was 26-- and had money! I bought myself that hoodie-- and sadly.. it wasn't the same as when I first touched it. The quality definitely went down and it's so much more expensive. They're still trying to push the same old stuff with a small twist. I don't think that's enough to bring them back from the dead.",
+    category: "Fashion",
+    images: ["http://s3-us-west-2.amazonaws.com/hypebeast-wordpress/image/2009/12/bape-store-singapore-opening-11.jpg", "http://www.authenticbape.com/images/bape-wallpapers/bape-camo.jpg", "http://blog.wishatl.com/wp-content/uploads/2015/12/Bape-Puma-4.jpg"],
+    tags: ["Bape", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "FOG is underrated for a reason",
+    content: "A lot of people say FOG is a copy cat hodge podge urban brand-- taking all of the good things in streetwear and barfing it out. But people don't understand the quality FOG injects into the clothes, and his thoughtfulness in colors, head to toe outfits, and simplicity. But the issue now is that he is trying a different route-- detouring from the urban coolness, to the preppy. I don't know how I feel about this and while I want a couple of the items-- I'm a bit sad that FOG went this route. It turned me off big time-- and to stray so early.. when you're barely starting to build a brand.. I don't think it's a good idea.",
+    category: "Fashion",
+    images: ["https://static.highsnobiety.com/wp-content/uploads/2017/03/11132707/fear-of-god-fifth-collection-lookbook-00.jpg", "https://media.gq.com/photos/5773fe88f2e3c2d95dee1cd4/master/w_2933/fear-of-god-sneakers-lead-03.jpg", "http://www.subterraneansuburbs.com/wp-content/uploads/2014/08/tumblr_n7na05AoVk1rnd229o1_1280.jpg"],
+    tags: ["FOG", "Fear of God", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "KAWS always kills the toy game",
+    content: "KAWS is my ultimate all time favorite artist and toy creator. I dream of the day when I can have a room that simply has all of the toys and statues he every created. It's so genius and relevant-- still, after all these years. Recently, I copped a couple of his re-released toys, and one came in today. I hope you all weren't sleeping on the drop. I think it's actually still available at his online store. Check that out if you haven't! Anyway, KAWS is the ultimate toy god-- and I wish all toys were made with the same care he puts into it-- from the excellent paint job, to the line details, to the bit of articulation. It doesn't seem like much to the casual eye-- but to all the vinyl toy enthusiasts out there-- we all know why KAWS is king.",
+    category: "Toys",
+    images: ["http://optimistinc.com/assets/projects/kaws-1150x645.png", "https://i0.wp.com/static.thetoychronicle.com/wp-content/uploads/2017/02/kaws-bff-vinyl-toy-2017black-.jpg?resize=960%2C646", "https://assets.paddle8.com/1259/1244/92169/92169-1448970055-Kaws_NoReply.jpg"],
+    tags: ["KAWS", "toys", "art", "urban art", "vinyl toys"]
+  },
+  {
+    title: "Supreme is the shit",
+    content: "I've been in love with Supreme since I was in middle school. While I wasn't a skater, the allure of it's grit, guerilla marketing, ultimate cool, really had me drooling at every drop. Back then, I couldn't afford it-- and was super excited when I got my hands on something finally. It was the Kate Moss x Supreme white picture tee. It was super covetted and to this day-- is still covetted. Today, I'm more than excited about how luxe it's come-- but still staying true to skate culture and grit.",
+    category: "Fashion",
+    images: ["https://i.ytimg.com/vi/1ra2AI5WqzI/maxresdefault.jpg", "https://nssdata.s3.amazonaws.com/images/galleries/11290/supreme-x-louis-vuitton.jpg", "https://img00.deviantart.net/c15c/i/2013/105/5/0/red_sky_at_night_shepherds_supreme_by_mrmoodys-d61sza5.jpg"],
+    tags: ["Supreme", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "Bape is holding on for dear life",
+    content: "When I was a kid, I'd always wanted something Bape. So the first time, I went to Japan, I made sure I copped something-- a keychain. Yeah, it was tiny and the only thing I could afford at the time. I told myself that when I got richer, I'd be back for the shark camo hoodie. To my surprise, Bape died out and it broke my heart. And then it came back-- and I was excited-- and I was 26-- and had money! I bought myself that hoodie-- and sadly.. it wasn't the same as when I first touched it. The quality definitely went down and it's so much more expensive. They're still trying to push the same old stuff with a small twist. I don't think that's enough to bring them back from the dead.",
+    category: "Fashion",
+    images: ["http://s3-us-west-2.amazonaws.com/hypebeast-wordpress/image/2009/12/bape-store-singapore-opening-11.jpg", "http://www.authenticbape.com/images/bape-wallpapers/bape-camo.jpg", "http://blog.wishatl.com/wp-content/uploads/2015/12/Bape-Puma-4.jpg"],
+    tags: ["Bape", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "FOG is underrated for a reason",
+    content: "A lot of people say FOG is a copy cat hodge podge urban brand-- taking all of the good things in streetwear and barfing it out. But people don't understand the quality FOG injects into the clothes, and his thoughtfulness in colors, head to toe outfits, and simplicity. But the issue now is that he is trying a different route-- detouring from the urban coolness, to the preppy. I don't know how I feel about this and while I want a couple of the items-- I'm a bit sad that FOG went this route. It turned me off big time-- and to stray so early.. when you're barely starting to build a brand.. I don't think it's a good idea.",
+    category: "Fashion",
+    images: ["https://static.highsnobiety.com/wp-content/uploads/2017/03/11132707/fear-of-god-fifth-collection-lookbook-00.jpg", "https://media.gq.com/photos/5773fe88f2e3c2d95dee1cd4/master/w_2933/fear-of-god-sneakers-lead-03.jpg", "http://www.subterraneansuburbs.com/wp-content/uploads/2014/08/tumblr_n7na05AoVk1rnd229o1_1280.jpg"],
+    tags: ["FOG", "Fear of God", "clothes", "street wear", "fashion"]
+  },
+  {
+    title: "KAWS always kills the toy game",
+    content: "KAWS is my ultimate all time favorite artist and toy creator. I dream of the day when I can have a room that simply has all of the toys and statues he every created. It's so genius and relevant-- still, after all these years. Recently, I copped a couple of his re-released toys, and one came in today. I hope you all weren't sleeping on the drop. I think it's actually still available at his online store. Check that out if you haven't! Anyway, KAWS is the ultimate toy god-- and I wish all toys were made with the same care he puts into it-- from the excellent paint job, to the line details, to the bit of articulation. It doesn't seem like much to the casual eye-- but to all the vinyl toy enthusiasts out there-- we all know why KAWS is king.",
+    category: "Toys",
+    images: ["http://optimistinc.com/assets/projects/kaws-1150x645.png", "https://i0.wp.com/static.thetoychronicle.com/wp-content/uploads/2017/02/kaws-bff-vinyl-toy-2017black-.jpg?resize=960%2C646", "https://assets.paddle8.com/1259/1244/92169/92169-1448970055-Kaws_NoReply.jpg"],
+    tags: ["KAWS", "toys", "art", "urban art", "vinyl toys"]
+  }
+])

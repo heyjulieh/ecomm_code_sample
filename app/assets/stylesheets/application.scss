@@ -179,6 +179,16 @@ nav.navbar {
     color: $light-red;
   }
 }
+#blog {
+  background-image: url('http://www.tor-coatings.com/wp-content/uploads/GraffitiBanner.jpg');
+  background-position: 50% 55%;
+  h1 {
+    color: white;
+  }
+  h1:hover {
+    color: $light-red;
+  }
+}
 
 .subsection {
   padding-top: 35px;
@@ -293,7 +303,7 @@ nav.navbar {
 }
 .form {
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   margin: auto;
   color: white;
   text-transform: uppercase;
@@ -301,10 +311,9 @@ nav.navbar {
     display: inline-block;
     letter-spacing: 7px;
     padding-bottom: 20px;
-    padding-top: 20px;
+    padding-top: 30px;
     color: $light-red;
   }
-
   .col {
     margin: auto;
     padding: 0;
@@ -571,6 +580,189 @@ nav.navbar {
       color: $light-red;
     }
   }
+}
+.blog {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  @media (min-width: 891px) {
+    h1 {
+      background-color: $light-red;
+      color: white;
+      padding: 10px;
+      top: 5px;
+      position: absolute;
+      z-index: 10;
+    }
+    p.content {
+      display: inline-block;
+      width: 100%;
+      height: 300px;
+    }
+  }
+  h1 {
+    color: white;
+    background-color: $light-red;
+    padding: 10px;
+  }
+  h4 {
+    display: inline-block;
+    height: 65px;
+    width: 100%;
+    color: white;
+    background-color: $light-red;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+  a.title, a.title:active, a.title:visited {
+    color: white;
+    text-decoration: none;
+  }
+  a.title:hover {
+    color: $light-black;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $light-black;
+  }
+  .content {
+    .col {
+      margin-bottom: 30px;
+    }
+    p, h6, .pull-right {
+      background-color: white;
+      padding: 15px;
+      margin: auto;
+    }
+    h6 {
+      text-transform: uppercase;
+      font-size: 9px;
+      color: grey;
+    }
+    .pull-right {
+      width: 100%;
+      text-align: right;
+      a, a:visited, a:active {
+        color: $light-black;
+        letter-spacing: 1px;
+        text-transform: lowercase;
+      }
+      a:hover {
+        color: $baby-green;
+        text-decoration: none;
+      }
+      .delete:hover {
+        text-decoration: line-through;
+        color: $light-red;
+      }
+    }
+    p {
+      a, a:active, a:visited {
+        text-transform: lowercase;
+        color: $light-red;
+      }
+      a:hover {
+        text-decoration: none;
+        color: $baby-green;
+      }
+      .fa {
+        color: $light-red;
+      }
+    }
+  }
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .content-area {
+  	position: relative;
+  	margin: 0 auto;
+  }
+  .blog-index {
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  .show-blog {
+  }
+  .carousel-indicators li {
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  }
+  .carousel-indicators .active {
+  height: 25px;
+  width: 25px;
+  }
+  .new-post {
+    padding-bottom: 20px;
+    text-align: center;
+    .btn {
+      background-color: $baby-green;
+      border-radius: 0px;
+      a, a:visited, a:active {
+        color: $light-black;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+      a:hover {
+        color: $light-red;
+        text-decoration: none;
+      }
+    }
+    .btn:hover {
+      color: $light-red;
+    }
+  }
+}
+.new-blog {
+  width: 100%;
+  padding-bottom: 50px;
+  h1 {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: $light-red;
+    letter-spacing: 2px;
+  }
+  .field {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    input, textarea {
+      width: 100%;
+      border-radius: 0px;
+      border: 0px;
+      font-weight: 200;
+      padding: 5px;
+    }
+    textarea {
+      margin-bottom: 5px;
+    }
+    label {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  .btn {
+    background-color: $baby-green;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  a, a:visited, a:active {
+    color: white;
+    text-transform: lowercase;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $light-red;
+  }
+
 }
 
 footer {

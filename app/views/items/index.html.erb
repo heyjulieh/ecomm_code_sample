@@ -1,26 +1,26 @@
 <%= render "layouts/jumbotron" %>
 
 <div class="container-fluid featured wrapper">
-    <div class="row">
+  <div class="row">
     <h4 class="subsection">Featured Items</h4>
-      <% @items.each do |item| %>
-        <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
-          <div class="items">
-            <div class="image-box">
-              <%= link_to item, class: "item-images" do %>
-                <%= image_tag item.images[0] %>
-              <% end %>
-              <p class="price pull-right">$ <%= item.price %></p>
-            </div>
-            <div class="item-info">
-              <%= link_to item, class: "item-images" do %>
-                <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
-                <p><%= item.description %></p>
-                <h6><%= item.size %></h6>
-              <% end %>
-            </div>
+    <% @items.each do |item| %>
+      <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="items">
+          <div class="image-box">
+            <%= link_to item, class: "item-images" do %>
+              <%= image_tag item.images[0] %>
+            <% end %>
+            <p class="price pull-right">$ <%= item.price %></p>
+          </div>
+          <div class="item-info">
+            <%= link_to item, class: "item-images" do %>
+              <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
+              <p><%= item.description %></p>
+              <h6><%= item.size %></h6>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>
