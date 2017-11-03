@@ -1,66 +1,74 @@
 <%= render "layouts/jumbotron-blog" %>
 
 <div class="container-fluid blog wrapper">
-  <div class="new-post">
-    <button class="btn">
-      <i class="fa fa-plus"></i> <%= link_to 'Post a New Blog', new_blog_path%>
-    </button>
-  </div>
+  <% if current_user %>
+    <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
+      <div class="new-post">
+        <button class="btn">
+          <i class="fa fa-plus"></i> <%= link_to 'Post a New Blog', new_blog_path%>
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="blog-content">
+    <div class="row">
+      <div class= "col col-sm-2">
+      </div>
+      <div class="col col-sm-8">
+        <h1><%= @blog.title %></h1>
+        <div class="content-area">
+          <div id="<%= @blog.id%>" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#<%= @blog.id%>" data-slide-to="0" class="active"></li>
+              <li data-target="#<%= @blog.id%>" data-slide-to="1"></li>
+              <li data-target="#<%= @blog.id%>" data-slide-to="2"></li>
+            </ol>
 
-    <div class="blog-content">
-      <div class="row">
-        <div class= "col col-sm-2">
-        </div>
-        <div class="col col-sm-8">
-          <h1><%= @blog.title %></h1>
-          <div class="content-area">
-            <div id="<%= @blog.id%>" class="carousel slide">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#<%= @blog.id%>" data-slide-to="0" class="active"></li>
-                <li data-target="#<%= @blog.id%>" data-slide-to="1"></li>
-                <li data-target="#<%= @blog.id%>" data-slide-to="2"></li>
-              </ol>
-
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <div class="item active show-blog">
-                  <%= image_tag @blog.images[0] %>
-                </div>
-                <div class="item show-blog">
-                  <%= image_tag @blog.images[1] %>
-                </div>
-                <div class="item show-blog">
-                  <%= image_tag @blog.images[2] %>
-                </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active show-blog">
+                <%= image_tag @blog.images[0] %>
+              </div>
+              <div class="item show-blog">
+                <%= image_tag @blog.images[1] %>
+              </div>
+              <div class="item show-blog">
+                <%= image_tag @blog.images[2] %>
               </div>
             </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#<%= @blog.id%>" data-slide="prev">
-              <span class="icon-prev"></span>
-            </a>
-            <a class="right carousel-control" href="#<%= @blog.id%>" data-slide="next">
-              <span class="icon-next"></span>
-            </a>
           </div>
-          <div class="row">
-            <div class="content">
-              <p><%= @blog.content %></p>
-              <p>
-              <i class="fa fa-arrow-left"></i> <%= link_to 'Back to All Blogs', blogs_path%>
-              </p>
-              <h6>Posted on: <%= @blog.created_at.strftime("%m/%d/%Y %I:%M %p") %></h6>
-              <h6>Category: <%= @blog.category %></h6>
-              <h6><i class="fa fa-tags"></i> <%= @blog.tags[0] %>, <%= @blog.tags[1] %>, <%= @blog.tags[2] %>, <%= @blog.tags[3] %></h6>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#<%= @blog.id%>" data-slide="prev">
+            <span class="icon-prev"></span>
+          </a>
+          <a class="right carousel-control" href="#<%= @blog.id%>" data-slide="next">
+            <span class="icon-next"></span>
+          </a>
+        </div>
+        <div class="row">
+          <div class="content">
+            <p><%= @blog.content %></p>
+            <p>
+            <i class="fa fa-arrow-left"></i> <%= link_to 'Back to All Blogs', blogs_path%>
+            </p>
+            <h6>Posted on: <%= @blog.created_at.strftime("%m/%d/%Y %I:%M %p") %></h6>
+            <h6>Category: <%= @blog.category %></h6>
+            <h6><i class="fa fa-tags"></i> <%= @blog.tags[0] %>, <%= @blog.tags[1] %>, <%= @blog.tags[2] %>, <%= @blog.tags[3] %></h6>
+            <% if current_user %>
+            <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
               <div class="pull-right">
                 <i class="fa fa-pencil"></i> <%= link_to 'Edit This', edit_blog_path(@blog) %><br />
+                <i class="fa fa-times"></i> <%= link_to 'Delete This', @blog, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>
               </div>
-            </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
-        <div class= "col col-sm-2">
-        </div>
+      </div>
+      <div class= "col col-sm-2">
       </div>
     </div>
+  </div>
 </div>

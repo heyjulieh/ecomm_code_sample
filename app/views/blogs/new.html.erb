@@ -1,17 +1,29 @@
 <%= render "layouts/jumbotron-blog" %>
 
-
 <div class="new-blog container-fluid">
-  <div class="col col-sm-2">
-  </div>
-  <div class="col col-sm-8">
-    <h1>New Blog Post</h1>
-    <%= render 'form', blog: @blog %>
+  <% if current_user %>
+    <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
+    <div class="col col-sm-2">
+    </div>
+    <div class="col col-sm-8">
+      <h1>New Blog Post</h1>
+      <%= render 'form', blog: @blog %>
+      <%= link_to blogs_path do %>
+        <i class="fa fa-reply"></i> Back to all Blogs
+      <% end %>
+    </div>
+    <div class="col col-sm-2">
+    </div>
+    <% else %>
+        <h1>You do not have access to this page.</h1>
+        <%= link_to blogs_path do %>
+          <i class="fa fa-reply"></i> Back to all Blogs
+        <% end %>
+    <% end %>
+  <% else %>
+    <h1>You do not have access to this page.</h1><br />
     <%= link_to blogs_path do %>
-              <div class="pull-right">
       <i class="fa fa-reply"></i> Back to all Blogs
     <% end %>
-  </div>
-  <div class="col col-sm-2">
-  </div>
+  <% end %>
 </div>
