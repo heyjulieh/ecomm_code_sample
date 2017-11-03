@@ -6,9 +6,11 @@ class TransactionsController < ApplicationController
     gon.client_token = generate_client_token
     cart_ids = $redis.smembers current_user_cart
     @cart_items = Item.find(cart_ids)
+    @popular = Instagram.user_recent_media
   end
 
   def create
+    @popular = Instagram.user_recent_media
     unless current_user.has_payment_info?
       @result = Braintree::Transaction.sale(
                   amount: current_user.cart_total_price,
@@ -44,6 +46,9 @@ class TransactionsController < ApplicationController
       gon.client_token = generate_client_token
       render :new
     end
+  end
+  def popular
+    @popular = Instagram.user_recent_media
   end
 
 private

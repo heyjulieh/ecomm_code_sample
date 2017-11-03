@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @popular = Instagram.user_recent_media
   end
 
   # GET /items/1
@@ -12,6 +13,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @cart_action = @item.cart_action current_user.try :id
+    @popular = Instagram.user_recent_media
   end
 
   # GET /items/new
@@ -61,6 +63,10 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def popular
+    @popular = Instagram.media_popular
   end
 
   private

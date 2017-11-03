@@ -3,5 +3,6 @@ class CategoriesController < ApplicationController
     category = params[:category]
     # find all items for that category
     @items = Item.where(category: category)
+    @popular = Instagram.user_recent_media
   end
 end

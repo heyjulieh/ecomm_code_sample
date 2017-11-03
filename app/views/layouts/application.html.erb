@@ -19,17 +19,60 @@
       <%= yield %>
     </div>
     <div class="push"></div>
-    </div>
+
     <footer class="row">
       <div class="social">
         <a href="https://www.facebook.com/jeffl1nen"><i class="fa fa-facebook-official"></i></a>
         <a href="https://twitter.com/OpenHouseOG"><i class="fa fa-twitter-square"></i></a>
         <a href="https://instagra.com/l1nerd"><i class="fa fa-instagram"></i></a><br />
       </div>
-        <h6>All of the items on this site are 100% authentic. All items are marked either new or used, and do list the condition. Please make sure you read the entire description of the specific item before you message me or make your purchase. All sales are final which means NO refunds. Some items do come with receipts; however, this is not guaranteed. If you have any questions or want more information regarding any of the items, please feel free to DM me on instagram, tweet me, or email me. Prices are negotiable to some extent but I usually don’t go any lower since I usually price lower than most sellers.<br /><br />
-            Read my blog, follow me on instagram or twitter for the latest news on my favorite drops and things I’m selling. Peace.</h6>
-        <p>© Jowljabber x JH 2017</p>
+
+      <div class="container instagram-carousel">
+        <h3>Latest Grams</h3>
+        <div class="row">
+    		  <div class="col-md-12">
+            <div id="Carousel" class="carousel slide">
+              <ol class="carousel-indicators">
+                  <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#Carousel" data-slide-to="1"></li>
+                  <li data-target="#Carousel" data-slide-to="2"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item active">
+                	<div class="row">
+                    <% @popular[0..3].each do |popular| %>
+                      <div class="col-xs-3"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="item">
+                	<div class="row">
+                    <% @popular[4..7].each do |popular| %>
+                      <div class="col-xs-3"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                    <% end %>
+                	</div>
+                </div>
+
+                <div class="item">
+                	<div class="row">
+                    <% @popular[8..11].each do |popular| %>
+                      <div class="col-xs-3"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                    <% end %>
+                	</div><!--.row-->
+                </div><!--.item-->
+              </div><!--.carousel-inner-->
+              <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+              <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+            </div><!--.Carousel-->
+      		</div>
+      	</div>
       </div>
+
+      <h6>All of the items on this site are 100% authentic. All items are marked either new or used, and do list the condition. Please make sure you read the entire description of the specific item before you message me or make your purchase. All sales are final which means NO refunds. Some items do come with receipts; however, this is not guaranteed. If you have any questions or want more information regarding any of the items, please feel free to DM me on instagram, tweet me, or email me. Prices are negotiable to some extent but I usually don’t go any lower since I usually price lower than most sellers.<br /><br />
+          Read my blog, follow me on instagram or twitter for the latest news on my favorite drops and things I’m selling. Peace.</h6>
+      <p>© Jowljabber x JH 2017</p>
 
     </footer>
   </body>

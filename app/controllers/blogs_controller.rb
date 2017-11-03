@@ -5,16 +5,22 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @popular = Instagram.user_recent_media
+
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @popular = Instagram.user_recent_media
+
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
+    @popular = Instagram.user_recent_media
+
   end
 
   # GET /blogs/1/edit
@@ -25,6 +31,8 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @popular = Instagram.user_recent_media
+
 
     respond_to do |format|
       if @blog.save
@@ -40,6 +48,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
+    @popular = Instagram.user_recent_media
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -59,6 +68,10 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def popular
+    @popular = Instagram.user_recent_media
   end
 
   private

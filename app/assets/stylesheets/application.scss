@@ -768,6 +768,26 @@ nav.navbar {
 footer {
   padding: 15px;
   background-color: lightgrey;
+  img {
+    max-height: 100%;
+  }
+  .instagram-carousel {
+    width: 100%;
+    background-color: lightgrey;
+    padding-bottom: 20px;
+    h3 {
+      display: inline-block;
+      text-transform: lowercase;
+      letter-spacing: 1px;
+      color: $light-red;
+      padding-bottom: 15px;
+    }
+  }
+  @media (max-width: 768px) {
+    .instagram-carousel {
+      display: none;
+    }
+  }
   .social {
     .fa {
       padding: 5px;
