@@ -47,7 +47,10 @@
                 <div class="item active">
                 	<div class="row">
                     <% @popular[0..5].each do |popular| %>
-                      <div class="col-xs-2"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                      <div class="col-xs-2">
+                        <a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a>
+                        <span><%= h truncate(popular.caption.text, :length => 60, :separator => ' ') %></span>
+                      </div>
                     <% end %>
                   </div>
                 </div>
@@ -55,7 +58,10 @@
                 <div class="item">
                 	<div class="row">
                     <% @popular[6..11].each do |popular| %>
-                      <div class="col-xs-2"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                      <div class="col-xs-2">
+                        <a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a>
+                        <span><%= h truncate(popular.caption.text, :length => 60, :separator => ' ') %></span>
+                      </div>
                     <% end %>
                 	</div>
                 </div>
@@ -63,13 +69,16 @@
                 <div class="item">
                 	<div class="row">
                     <% @popular[12..17].each do |popular| %>
-                      <div class="col-xs-2"><a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a></div>
+                      <div class="col-xs-2">
+                        <a href="#" class="thumbnail"><%= image_tag popular.images.standard_resolution.url %></a>
+                        <span><%= h truncate(popular.caption.text, :length => 60, :separator => ' ') %></span>
+                      </div>
                     <% end %>
                 	</div><!--.row-->
                 </div><!--.item-->
               </div><!--.carousel-inner-->
-              <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-              <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+              <a data-slide="prev" href="#Carousel" class="left carousel-control"><i class="fa fa-long-arrow-left"></i></a>
+              <a data-slide="next" href="#Carousel" class="right carousel-control"><i class="fa fa-long-arrow-right"></i></a>
             </div><!--.Carousel-->
       		</div>
       	</div>
