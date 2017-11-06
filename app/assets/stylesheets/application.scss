@@ -782,6 +782,17 @@ footer {
       color: $light-red;
       padding-bottom: 15px;
     }
+    .carousel-indicators{
+      top: -10px;
+      position: relative;
+    }
+    .carousel-control {
+      background: none;
+      font-size: 40px;
+      top: -30px;
+      position: absolute;
+
+    }
   }
   @media (max-width: 768px) {
     .instagram-carousel {
