@@ -767,6 +767,44 @@ nav.navbar {
 
 footer {
   background-color: lightgrey;
+  .insta-mobile {
+    width: 100%;
+    background-color: $light-black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-left:0px;
+    margin: 0px;
+
+    .carousel-indicators{
+      top: -10px;
+      position: relative;
+      li {
+        border: 1px solid $light-red;
+        border-radius: 0px;
+
+      }
+      li.active {
+        background-color: $light-red;
+        border: 1px solid $light-red;
+        border-radius: 0px;
+      }
+    }
+    .carousel-control {
+      background: none;
+      font-size: 40px;
+      top: -30px;
+      position: absolute;
+      i {
+        font-size: 25px;
+        color: $light-red;
+      }
+    }
+    .thumbnail {
+      background: none;
+      border: 0px;
+    }
+  }
   .instagram-carousel {
     width: 100%;
     background-color: $light-black;

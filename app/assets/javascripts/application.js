@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+ $(window).resize(function() {
+  if ($(window).width() < 768) {
+    $('.insta-mobile').show();
+  }
+  else {
+    $('.insta-mobile').hide();
+  }
+});
