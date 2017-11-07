@@ -27,8 +27,38 @@
   </div>
 
   <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size, id: :item_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fit %>
+    <%= form.text_field :fit, id: :item_fit %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :item_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition %>
+    <%= form.text_field :condition, id: :item_condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :new_or_used %>
+    <%= form.text_field :new_or_used, id: :item_new_or_used %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :item_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, id: :item_quantity %>
   </div>
 
   <div class="field">
@@ -36,12 +66,40 @@
     <%= form.text_field :price, id: :item_price %>
   </div>
 
-  <div class="field">
-    <%= form.label :img_url %>
-    <%= form.text_field :img_url, id: :item_img_url %>
-  </div>
+  <% if request.original_fullpath == '/items/new' %>
+    <div class="field">
+      <%= form.label :images %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :tags %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: "" %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: "" %>
+    </div>
+
+  <% else %>
+    <div class="field">
+      <%= form.label :images %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[0] %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[1] %>
+      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[2] %>
+    </div>
+
+    <div class="field">
+      <%= form.label :tags %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[0] %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[1] %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[2] %>
+      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[3] %>
+    </div>
+  <%end%>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn' %>
   </div>
 <% end %>

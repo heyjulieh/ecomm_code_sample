@@ -60,6 +60,10 @@ private
     end
   end
 
+  def summary
+    @popular = Instagram.user_recent_media
+  end
+
   def check_cart
    if current_user.get_cart_items.blank?
      flash[:alert] = "Please add some items to your cart before processing your transaction."
