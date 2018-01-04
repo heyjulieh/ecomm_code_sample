@@ -1,6 +1,9 @@
-<%= render "layouts/jumbotron" %>
 
 <div id="mycart" class="container-fluid mycart">
+  <%= devise_error_messages! %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <h3>Your Cart</h3>
   <p class="cart-amount">Total Items In Your Cart: <span id="cart-count" class="cart-count"><%=current_user.cart_count%></span></p>
   <% if current_user.cart_count==0 %>
@@ -21,37 +24,38 @@
     </div>
   <% end %>
   <div class="row">
-    <div class="col col-sm-8 col-md-8">
+    <div class="col col-sm-6 col-md-6">
       <% @cart_items.each do |item|%>
       <div class="cart-item row">
-        <div class="col col-xs-5 col-sm-3 cart-image">
+        <div class="col col-xs-5 col-sm-4 cart-image">
           <%=link_to item do%>
             <%=image_tag item.images[0] %>
           <%end%>
         </div>
-        <div class="col col-xs-7 col-sm-6 cart-info">
+        <div class="col col-xs-6 col-sm-6 cart-info">
           <%=link_to item do%>
+          <%=link_to "remove", data: {targetUrl: remove_from_cart_path(item)} do%>
+            <i class="fa fa-times-circle pull-right"></i>
+          <%end%>
+
             <h4> <%= item.brand %> <%= item.release_year %></h4>
           <%end%>
           <p><%= item.colorway %> <%= item.description %></p>
           <p><%= item.size %></p>
-          <p class="btn">$ <%= item.price %></p><br />
-          <%=link_to "remove", data: {targetUrl: remove_from_cart_path(item)} do%>
-            <i class="fa fa-times-circle"></i>
-          <%end%>
+          <p>$ <%= item.price %></p><br />
         </div>
       </div><br /><br />
       <%end%>
     </div>
 
-    <div class="col col-sm-4 pull-right">
+    <div class="col col-sm-6 pull-right">
       <% if current_user.cart_count != 0%>
         <h5>Total amount: $<span class="cart-money"><%=current_user.cart_total_price %></span></h5><br />
         <p>Review your order <br />& confirm payment <br />on the next page.<br /></p><br />
-        <%=link_to "Checkout", new_transaction_path, class: "btn" %>
+        <%=link_to "Checkout", new_transaction_path, class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= render "layouts/footer" %>
+<%= render "layouts/footer_simple" %>

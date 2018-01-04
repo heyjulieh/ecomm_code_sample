@@ -1,4 +1,3 @@
-<%= render "layouts/jumbotron" %>
 
 <div class="payment container">
   <div class="row">
@@ -11,17 +10,17 @@
           <p class="mbs">You are paying for <%=current_user.cart_count%> items.</p>
           <p class="mbs">Total amount: $<%=current_user.cart_total_price%>.</p>
         </div>
-        <div class="col col-sm-7 summary">
+        <div class="col col-xs-7 summary">
           <% @cart_items.each do |item|%>
             <%=link_to item do%>
               <h4> <%= item.brand %> <%= item.release_year %></h4>
             <%end%>
             <p><%= item.colorway %> <%= item.description %></p>
             <p><%= item.size %></p>
-            <p class="price">$ <%= item.price %></p>
+            <p>$ <%= item.price %></p>
           <% end %>
         </div>
-        <div class="col col-sm-5 pay_info">
+        <div class="col col-xs-5 pay_info">
           <%= form_tag transactions_path do%>
             <p>Please enter your billing information:</p>
             <div id="dropin"></div>
@@ -36,4 +35,4 @@
   </div>
 </div>
 
-<%= render "layouts/footer" %>
+<%= render "layouts/footer_simple" %>

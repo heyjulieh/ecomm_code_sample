@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.string :new_or_used
       t.string :category
       t.integer :quantity
-      t.float :price
+      t.decimal :price, :precision=> 10, :scale=> 0
       t.text :images
       t.text :tags
 

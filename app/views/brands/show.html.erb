@@ -2,21 +2,16 @@
 <div class="container-fluid featured wrapper">
     <div class="row">
     <h3 class="subsection">
-      <% if request.original_fullpath == '/categories/shoes' %>
-        Shoes
+      <% if request.original_fullpath == '/brands/adidas' %>
+        Adidas
       <% end %>
-      <% if request.original_fullpath == '/categories/tops' %>
-        Tops
+      <% if request.original_fullpath == '/brands/nike' %>
+        Nike
       <% end %>
-      <% if request.original_fullpath == '/categories/bottoms' %>
-        Bottoms
+      <% if request.original_fullpath == '/brands/vans' %>
+        Vans
       <% end %>
-      <% if request.original_fullpath == '/categories/accessories' %>
-        Accessories
-      <% end %>
-      <% if request.original_fullpath == '/categories/toys' %>
-        Toys
-      <% end %>
+
     </h3>
       <% @items.each do |item| %>
         <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
@@ -25,16 +20,16 @@
               <%= link_to item, class: "item-images" do %>
                 <%= image_tag item.images[0] %>
               <% end %>
+
             </div>
-            <div class="item-info">
-              <%= link_to item, class: "item-images" do %>
+            <%= link_to item, class: "item-images" do %>
+              <div class="item-info">
                 <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
                 <p><%= item.description %></p>
                 <h6><%= item.size %></h6>
                 <p class="price">$ <%= item.price %></p>
-
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>

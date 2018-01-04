@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :items
 
   get '/categories/:category', to: 'categories#show', as: 'category'
+  get '/brands/:brand', to: 'brands#show', as: 'brand'
+
   root 'items#index'
   # route to redirect users to root if they enter invalid URL
 

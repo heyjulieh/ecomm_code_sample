@@ -4,25 +4,24 @@
       <%= link_to cart_path, :class => "nav navbar-nav navbar-right pull-right" do%>
         <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=current_user.cart_count%></span>
       <%end%>
-    <%else%>
-        <%=link_to "sign up", new_user_registration_path, :class => "nav navbar-nav navbar-right pull-right"%>
-        <%=link_to "sign in", new_user_session_path, :class => "nav navbar-nav navbar-right pull-right"%>
     <%end%>
 
+
     <div class="navbar-header">
-      <button type="button" class="pull-left navbar-toggle collapsed navbar-right pull-right" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
+      <button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
         <span class="icon-bar top-bar"></span>
         <span class="icon-bar middle-bar"></span>
         <span class="icon-bar bottom-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img class="logo" src="<%= asset_path( 'monster.svg' ) %>" /></a>
+      <!-- <img class="logo" src="<%= asset_path( 'monster.svg' ) %>" /> -->
+      <a class="navbar-brand" href="/">Gum Store</a></a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right pull-right">
-        <%if signed_in?%>
+      <%if signed_in?%>
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <%=link_to edit_user_registration_path, :class=> "dropdown-toggle", 'data-toggle' => 'dropdown' do%>hi, <%=current_user.first_name %>!<span class="caret"></span>
+            <%=link_to edit_user_registration_path, :class=> "dropdown-toggle", 'data-toggle' => 'dropdown' do%>yo, <%=current_user.first_name %> <span class="caret"></span>
             <%end%>
             <ul class="dropdown-menu">
               <li>
@@ -33,15 +32,32 @@
               <li><%=link_to "sign out", destroy_user_session_path, method: :delete, 'data-ajax' => "false" %></li>
             </ul>
           </li>
-        <% end %>
-      </ul>
+        </ul>
+
+      <%else%>
+          <%=link_to "sign up", new_user_registration_path, :class => "nav navbar-nav navbar-right pull-right"%>
+          <%=link_to "sign in", new_user_session_path, :class => "nav navbar-nav navbar-right pull-right"%>
+      <%end%>
       <ul class="nav navbar-nav nav-center">
-        <li><a href="/blogs">Blog</a></li>
-        <li><a href="/categories/shoes">Shoes</a></li>
-        <li><a href="/categories/tops">Tops</a></li>
-        <li><a href="/categories/bottoms">Bottoms</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clothes
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/categories/bottoms">Bottoms</a></li>
+            <li><a href="/categories/tops">Tops</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="/categories/shoes">Shoes
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/brands/adidas">Adidas</a></li>
+            <li><a href="/brands/nike">Nike</a></li>
+          </ul>
+        </li>
         <li><a href="/categories/accessories">Accessories</a></li>
         <li><a href="/categories/toys">Toys</a></li>
+        <li><a href="/blogs">Blog</a></li>
       </ul>
     </div>
   </div>

@@ -1,44 +1,85 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900');
 
 $light-red: #EB5757;
 $light-black: #222222;
+$jade: #9AC7BA;
 $baby-green: #B5DED5;
+$pale-green: #DFF6EF;
+$gold: #FFDC73;
 
-.alert {
-  background-color: white;
-  text-transform: uppercase;
-  padding-top: 30px;
+
+.alert, .notice,  {
+  background-color: transparent;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: $light-red;
+  padding-top: 120px;
   padding-bottom: 30px;
+  margin-left: 0px;
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 0px;
   width: 100%;
+  text-decoration: none;
+  list-style: none;
+}
+#error_explanation > h2
+ {
+   background-color: transparent;
+   letter-spacing: 1px;
+   font-size: 16px;
+   color: $light-red;
+   text-transform: uppercase;
+   padding-top: 50px;
+   padding-bottom: 30px;
+   padding-left: 15px;
+   margin-left: 0px;
+   margin-top: 0;
+   margin-bottom: 0;
+   border-radius: 0px;
+   width: 100%;
+   text-decoration: none;
+   list-style: none;
+ }
+.alert:empty, .notice:empty {
+   display: none;
 }
 .wrapper {
-  min-height: 100%;
+  min-height: 100vh;
   height: auto !important;
   height: 100%;
+  margin-bottom: 40px;
 }
 body {
-  background-color: $light-black;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
   height: 100%;
 }
 .row {
   margin: 0;
 }
 nav.navbar {
+  background-color: white;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   border: 0;
   margin: auto;
   text-transform: lowercase;
-  .navbar-brand{
+  .navbar-brand, .navbar-brand:visited {
+    font-size: 35px;
+    letter-spacing: 3px;
+    color: $baby-green;
+    font-weight: 700;
     .logo {
-      height: 25px;
+      height: 35px;
     }
+  }
+  .navbar-brand:hover {
+    color: $gold
   }
   a.navbar-nav {
     display: inline-block;
@@ -48,12 +89,19 @@ nav.navbar {
   }
   a.navbar-nav:hover {
     text-decoration: none;
-    color: $light-red;
+    color: $gold;
+  }
+  a.navbar-nav:visited, a.navbar-nav:active {
+    text-decoration: none;
+    border-bottom: 0px;
+  }
+  a.active {
+    text-decoration: none;
+    border-bottom: 0px;
   }
   @media (min-width: 768px) {
     .nav-center {
       width:100%;
-      margin-top: -50px;
       text-align: center;
       > li {
         float: none;
@@ -61,23 +109,61 @@ nav.navbar {
       }
     }
   }
+  .cart-icon {
+    margin-right: 15px;
+  }
   .cart-count {
-    color: $baby-green;
+    color: $light-red;
     font-size: 10px;
-    top: -8px;
+    top: -10px;
     position:relative;
   }
   .cart-count:hover {
+    color: $light-black;
+  }
+  .open > a, .open > a:hover, .open > a:focus {
+    background-color: transparent !important;
+    color: $baby-green !important;
+  }
+  .dropdown-menu {
+    background-color: $light-black;
+    color: grey;
+    padding-left: 15px;
+    border: 0px !important;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
+  }
+  .dropdown-menu > li {
+    margin: 0px;
+    padding-left: 15px;
+
+  }
+  .dropdown-menu > li > a {
     color: white;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+  }
+  .dropdown-menu > li > a:hover {
+    color: $baby-green !important;
+    background-color: transparent;
+  }
+  .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+    background-color: transparent !important;
+    color: grey !important;
   }
   .navbar-toggle {
     border: none;
     background: transparent !important;
-    margin-right: 0px;
+    margin-top: 12px;
+    margin-right: 5px;
+    margin-left: 10px;
     &:hover {
       background: transparent !important;
     }
     .icon-bar {
+      background-color: $light-black;
       width: 22px;
       transition: all 0.2s;
     }
@@ -111,6 +197,7 @@ nav.navbar {
   }
   .fa {
     font-size: 18px;
+    color: $light-black;
   }
 }
 .jumbotron {
@@ -126,7 +213,7 @@ nav.navbar {
     padding-left: 15px;
     a {
       h1 {
-        color: white;
+        color: $light-black;
         text-transform: uppercase;
         letter-spacing: 10px;
       }
@@ -139,51 +226,12 @@ nav.navbar {
     }
   }
 }
-#shoes {
-  background-image: url('https://cdn5.kicksonfire.com/wp-content/uploads/2015/11/adidas-Yeezy-Boost-350-Moonrock-Lead.jpg?x77385');
-}
-#tops {
-  background-image: url('http://www.projectblitz.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/u/supreme_20motion_20hood_20navy_20blitz1.jpg');
-  background-position: 50% 70%;
-  h1:hover {
-    color: $light-red;
-  }
-}
-#bottoms {
-  background-image: url('https://www.stadiumgoods.com/media/catalog/product/cache/1/base/1000x600/9df78eab33525d08d6e5fb8d27136e95/s/u/su1936_2.png');
-  background-position: 50% 100%;
-  h1 {
-    color: $light-red;
-  }
-  h1:hover {
-    color: darkgrey;
-  }
-}
-#accessories {
-  background-image: url('http://www.projectblitz.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/u/supreme_20beachball_20blitz2.jpg');
-  background-position: 50% 40%;
-  h1 {
-    color: $light-black;
-  }
-  h1:hover {
-    color: darkgrey;
-  }
-}
-#toys {
-  background-image: url('https://www.high.org/wp-content/uploads/2017/01/kaws-teaser.jpg');
-  background-position: 50% 55%;
-  h1 {
-    color: $light-black;
-  }
-  h1:hover {
-    color: $light-red;
-  }
-}
+
 #blog {
   background-image: url('http://www.tor-coatings.com/wp-content/uploads/GraffitiBanner.jpg');
   background-position: 50% 55%;
   h1 {
-    color: white;
+    color: $light-black;
   }
   h1:hover {
     color: $light-red;
@@ -191,52 +239,95 @@ nav.navbar {
 }
 
 .subsection {
-  padding-top: 35px;
+  padding-bottom: 50px;
+  padding-top: 150px;
+  padding-left: 15px;
+  margin: auto;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: $light-black;
+}
+h4 {
   padding-bottom: 20px;
   padding-left: 15px;
   margin: auto;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: $light-red;
+  letter-spacing: 2px;
+  color: $light-black;
+}
+h3.subsection {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 .featured {
-  background-color: $light-black;
+  background-color: white;
   width: 100%;
   padding: 0 0 50px 0;
+  .container {
+    margin: 0px;
+    padding: 0px;
+  }
+  .items:hover .item-info{
+    visibility: visible;
+    opacity: 1;
+  }
     .items {
     text-align: center;
+    position: relative;
     height: 200px;
     margin-bottom: 15px;
+    .col {
+      padding: 0px;
+      margin: 0px;
+    }
     .image-box {
-      height: 120px;
+      height: 150px;
       background-color: white;
       overflow: hidden;
-      .price {
-        position: absolute;
-        right: 15px;
-        top: 85px;
-        padding-right: 10px;
-        padding-left: 10px;
-        background-color: black;
-        color: white;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
       .item-images {
         img {
           position: relative;
           display: inline-block;
-          height: 100px;
+          height: 150px;
+          flex-shrink: 0;
+          min-width: 100%;
+          min-height: 100%
         }
       }
     }
     .item-info {
-      height: 80px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      visibility: hidden;
+      opacity: 0;
+      /* transition effect. not necessary */
+      transition: opacity .2s, visibility .2s;
+      height: 150px;
       padding: 7px;
-      background-color: lightgrey;
-      a {
+      .price {
+        position: absolute;
+        right: 0px;
+        top: 150px;
+        padding-right: 10px;
+        padding-left: 10px;
+        background-color: $pale-green;
         color: $light-black;
       }
+      a {
+        color: white;
+      }
       a:hover {
-        color: $light-black;
+        color: white;
         text-decoration: none;
       }
       h5 {
@@ -262,7 +353,7 @@ nav.navbar {
   }
 }
 .show {
-  padding-top: 35px;
+  padding-top: 150px;
   background-color: white;
   padding-bottom: 50px;
   height: 90vh;
@@ -274,15 +365,20 @@ nav.navbar {
   .show-item-info {
     h3 {
       text-transform: uppercase;
-      color: $light-red;
+      color: $light-black;
       letter-spacing: 3px;
+    }
+    h4 {
+      padding-left: 0px;
+      margin-left: 0px;
     }
     .btn-danger {
       display: inline-block;
       padding: 10px;
       margin-top: 15px;
       text-transform: uppercase;
-      font-weight: bold;
+      font-weight: 400;
+      background-color: $gold;
     }
     a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited {
       text-decoration: none;
@@ -290,9 +386,9 @@ nav.navbar {
     }
     .btn {
       display: inline-block;
-      background-color: $baby-green;
+      background-color: $pale-green;
       color: $light-black;
-      font-weight: bold;
+      font-weight: 200;
       border-radius: 0;
       letter-spacing: 1px;
     }
@@ -303,27 +399,41 @@ nav.navbar {
 }
 .form {
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+  padding-top: 120px;
   margin: auto;
-  color: white;
+  color: $light-black;
   text-transform: uppercase;
   h2 {
     display: inline-block;
-    letter-spacing: 7px;
+    letter-spacing: 5px;
     padding-bottom: 20px;
-    padding-top: 30px;
-    color: $light-red;
+    color: $light-black;
+    font-weight: 700;
+  }
+  h3 {
+    padding-bottom: 20px;
+  }
+
+  label {
+    text-transform: capitalize;
+    font-weight: 300;
+    color: grey;
+    margin-left: 5px;
   }
   .col {
     margin: auto;
     padding: 0;
   }
   form {
-    background-color: $light-black;
+    background-color: white;
     input {
       width: 100%;
       margin-bottom: 20px;
-      border: 0px;
+      border-bottom: 1px solid lightgrey;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
       padding: 5px;
       font-weight: 300;
       color: black;
@@ -332,19 +442,28 @@ nav.navbar {
       display: inline-block;
       width: 15px;
       margin-right: 5px;
+      margin-left: 5px;
+      margin-top: 30px;
     }
+
     .letsgo {
-      background-color: $baby-green;
+      color: grey;
+      background-color: $gold;
       text-transform: uppercase;
+      letter-spacing: 2px;
       font-weight: bold;
-      margin-bottom: 30px;
-      padding: 5px;
-      border-radius: 3px;
+      padding: 10px;
+      width: 100px;
+      margin-top: 20px;
     }
+
     .letsgo:hover {
-      color: $light-red;
+      color: $light-black;
     }
     .date {
+      margin-bottom: 20px;
+    }
+    #pw {
       margin-bottom: 20px;
     }
     i {
@@ -355,22 +474,28 @@ nav.navbar {
       background-color: white;
       color: black;
       font-weight: 300;
+      margin-left: 5px;
+    }
+    .address {
+      display: inline-block;
+      padding: 0px;
+      margin: 0px;
     }
     .actions {
-      width: 100%;
       padding: 0;
-      margin: 30px 0px 0px 0px;
       input {
-        border-radius: 5px;
-        border: 0px;
+        color: grey;
+        background-color: $gold;
         text-transform: uppercase;
-        background-color: $baby-green;
-        color: $light-black;
+        letter-spacing: 2px;
         font-weight: bold;
+        padding: 10px;
         margin-bottom: 30px;
+        margin-top: 20px;
       }
+
       input:hover {
-        color: $light-red;
+        color: $light-black;
       }
     }
   }
@@ -381,18 +506,29 @@ nav.navbar {
     display: inline-block;
     color: $light-red;
     font-size: 11px;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-left: 5px;
       a {
-      color: white;
+      color: grey;
+      letter-spacing: 1px;
       }
       a:hover {
-        color: $light-red;
+        color: $light-black;
         text-decoration: none;
       }
   }
   .back:hover {
-    color: white;
+    color: $light-black;
     text-decoration: none;
+  }
+  p {
+    text-transform: lowercase;
+    font-weight: 300;
+    font-size: 12px;
+  }
+  #user_password {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   #cancel {
     margin-top: 30px;
@@ -404,18 +540,24 @@ nav.navbar {
     }
     .btn {
       color: black;
-      background-color: darkgrey;
+      border-radius: 0px;
+      width: 90px;
+      background-color: transparent;
       padding: 5px;
       margin: 0px;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
       font-size: 10px;
       text-transform: lowercase;
+      text-align: left;
     }
     .btn:hover {
-      color: white;
+      color: $light-black;
     }
   }
 }
 .mycart {
+  padding-top: 130px;
   padding-bottom: 50px;
   background-color: white;
   .sample {
@@ -429,8 +571,13 @@ nav.navbar {
   }
   h3 {
     text-transform: uppercase;
-    letter-spacing: 5px;
-    color: $light-red
+    letter-spacing: 2px;
+    color: $light-black
+  }
+  h4 {
+    margin-left: 0px;
+    padding-left: 0px;
+    letter-spacing: 1px;
   }
   h5.no-items {
     display:inline-block;
@@ -454,8 +601,8 @@ nav.navbar {
     span {
       display: inline-block;
       border-radius: 5px;
-      background-color: $light-black;
-      color: white;
+      background-color: white;
+      color: $light-black;
       padding-left: 5px;
       padding-right: 5px;
       margin-left: 5px;
@@ -472,18 +619,17 @@ nav.navbar {
       color: $light-black;
       h4 {
         text-transform: uppercase;
-        color: $light-red;
+        color: $light-black;
+        padding-bottom: 0px;
+        margin-bottom: 5px;
       }
       h4:hover {
         color: $light-black;
       }
-      .btn {
-        background-color: $light-black;
-        color: white;
-        border-radius: 0px;
-        padding: 7px;
-        margin-bottom: 10px;
-        font-weight: 300;
+      p {
+        font-weight: 200;
+        margin-bottom: 5px;
+        padding-bottom: 0px;
       }
       .fa {
         display: inline-block;
@@ -493,7 +639,7 @@ nav.navbar {
         color: grey;
       }
       a:hover {
-        color: $light-red;
+        color: $baby-green;
         text-decoration: none;
       }
     }
@@ -502,10 +648,12 @@ nav.navbar {
     }
   }
   .btn {
-    background-color: $baby-green;
+    background-color: $gold;
     color: $light-black;
     text-transform: uppercase;
     font-weight: bold;
+    border-radius:0px;
+    border: 0px;
   }
   .pull-right {
     text-align: right;
@@ -520,9 +668,17 @@ nav.navbar {
 .payment {
   background-color: white;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 130px;
+  .row {
+    width: 100%;
+    margin-bottom: 40px;
+  }
   h2 {
     text-transform: uppercase;
+  }
+  h4 {
+    margin-left: 0px;
+    padding-left: 0px;
   }
   .mbs {
     font-weight: 200;
@@ -538,6 +694,7 @@ nav.navbar {
       text-decoration: none;
     }
     .price {
+      background-color: $pale-green;
       width: 100%;
       display: inline-block;
       padding-bottom: 10px;
@@ -571,7 +728,9 @@ nav.navbar {
     }
     .btn {
       margin-top: 20px;
-      background-color: $baby-green;
+      background-color: $gold;
+      border-radius: 0px;
+      border: 0px;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 12px;
@@ -588,7 +747,7 @@ nav.navbar {
   @media (min-width: 891px) {
     h1 {
       background-color: $light-red;
-      color: white;
+      color: $light-black;
       padding: 10px;
       top: 5px;
       position: absolute;
@@ -601,7 +760,7 @@ nav.navbar {
     }
   }
   h1 {
-    color: white;
+    color: $light-black;
     background-color: $light-red;
     padding: 10px;
   }
@@ -609,14 +768,14 @@ nav.navbar {
     display: inline-block;
     height: 65px;
     width: 100%;
-    color: white;
+    color: $light-black;
     background-color: $light-red;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 0px;
   }
   a.title, a.title:active, a.title:visited {
-    color: white;
+    color: $light-black;
     text-decoration: none;
   }
   a.title:hover {
@@ -700,7 +859,7 @@ nav.navbar {
     padding-bottom: 20px;
     text-align: center;
     .btn {
-      background-color: $baby-green;
+      background-color: $pale-green;
       border-radius: 0px;
       a, a:visited, a:active {
         color: $light-black;
@@ -743,19 +902,19 @@ nav.navbar {
       margin-bottom: 5px;
     }
     label {
-      color: white;
+      color: $light-black;
       text-transform: uppercase;
     }
   }
   .btn {
-    background-color: $baby-green;
+    background-color: $pale-green;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 20px;
   }
   a, a:visited, a:active {
-    color: white;
+    color: $light-black;
     text-transform: lowercase;
     text-decoration: none;
   }
@@ -766,85 +925,39 @@ nav.navbar {
 }
 
 footer {
-  background-color: lightgrey;
-  .insta-mobile {
-    width: 100%;
-    background-color: $light-black;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-left:0px;
+  padding: 0px;
+  margin: 0px;
+  .container {
+    padding: 0px;
     margin: 0px;
-
-    .carousel-indicators{
-      top: -10px;
-      position: relative;
-      li {
-        border: 1px solid $light-red;
-        border-radius: 0px;
-
-      }
-      li.active {
-        background-color: $light-red;
-        border: 1px solid $light-red;
-        border-radius: 0px;
-      }
-    }
-    .carousel-control {
-      background: none;
-      font-size: 40px;
-      top: -30px;
-      position: absolute;
-      i {
-        font-size: 25px;
-        color: $light-red;
-      }
-    }
-    .thumbnail {
-      background: none;
-      border: 0px;
-    }
-  }
-  .instagram-carousel {
     width: 100%;
-    background-color: $light-black;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    h3 {
-      display: inline-block;
-      text-transform: lowercase;
-      letter-spacing: 1px;
-      color: $light-red;
-      padding-bottom: 15px;
-    }
-    .carousel-indicators{
-      top: -10px;
-      position: relative;
-      li {
-        border: 1px solid $light-red;
-        border-radius: 0px;
+  }
+  .instagram {
+    width: 100%;
+    background-color: white;
+    padding: 20px 0px 20px 0px;
+    margin: 0px 0px 30px 0px;
 
-      }
-      li.active {
-        background-color: $light-red;
-        border: 1px solid $light-red;
-        border-radius: 0px;
-      }
+    img {
+      height: 50vh;
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%
     }
-    .carousel-control {
-      background: none;
-      font-size: 40px;
-      top: -30px;
-      position: absolute;
-      i {
-        font-size: 25px;
-        color: $light-red;
-      }
+    .col {
+      padding:0px;
+      margin: 0px;
     }
-    .thumbnail {
-      background: none;
-      border: 0px;
+    .row {
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden
     }
+
     span {
       display: inline-block;
       width: 100%;
@@ -854,15 +967,102 @@ footer {
     }
   }
   @media (max-width: 768px) {
-    .instagram-carousel {
-      display: none;
+    .instagram {
+      img {
+        height: 30vh;
+      }
+    }
+  }
+  @media (max-width: 540px) {
+    .instagram {
+      img {
+        height: 20vh;
+      }
+    }
+  }
+  @media (max-width: 355px) {
+    .instagram {
+      img {
+        height: 18vh;
+      }
+    }
+  }
+  @media (max-width: 325px) {
+    .instagram {
+      img {
+        height: 16vh;
+      }
     }
   }
   .social {
+    background-color: $pale-green;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    .row {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      // display: flex;
+      // align-items: center;
+    }
+    .col {
+      text-align: left;
+      margin: auto;
+      @media (max-width: 768px) {
+        .icons {
+          text-align: left !important;
+          margin: auto;
+          width: 250px;
+          padding-left: 45px;
+        }
+      }
+      .icons {
+        text-align: center;
+      }
+      .content {
+        text-align: left;
+        margin: auto;
+        width: 250px;
+        padding-left: 45px;
+      }
+    }
     .fa {
-      padding-left: 15px;
+      padding-right: 15px;
       font-size: 28px;
       color: $light-black;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    a, h5 {
+      text-transform: uppercase;
+      color: grey;
+      font-weight: 300;
+      padding-left: 0px;
+      margin-left: 0px;
+      padding-top: 15px;
+    }
+    a:hover {
+      color: $light-black;
+      text-decoration: none;
+    }
+    form {
+      input {
+        border-radius: 0px;
+        border: 0px;
+        padding: 10px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+      .btn {
+        color: white;
+        border-radius: 0px;
+        border: 0px;
+        background-color: $light-black;
+      }
+      .btn:hover {
+        color: $baby-green;
+      }
     }
   }
   h6 {
@@ -871,11 +1071,11 @@ footer {
     color: $light-black;
   }
   p {
-    padding-right: 15px;
-    color: grey;
+    color: $jade;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 10px;
     margin-top: 20px;
-    text-align: right;
+    text-align: center;
   }
 }

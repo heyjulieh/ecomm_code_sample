@@ -1,42 +1,5 @@
 
 <footer class="row">
-  <div class="container instagram">
-    <h4>Latest Grams</h4>
-    <div class="row">
-      <div class="col col-xs-12">
-        <div class="row">
-          <% @popular[0..2].each do |popular| %>
-            <div class="col col-xs-4">
-              <a href="#" class="" ><%= image_tag popular.images.standard_resolution.url %></a>
-              <!-- <span><%= h truncate(popular.caption.text, :length => 60, :separator => ' ') %></span> -->
-            </div>
-          <% end %>
-        </div>
-        <div class="row">
-          <% @popular[3..5].each do |popular| %>
-            <div class="col col-xs-4">
-              <a href="#" class="" ><%= image_tag popular.images.standard_resolution.url %></a>
-              <!-- <span><%= h truncate(popular.caption.text, :length => 60, :separator => ' ') %></span> -->
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- <div class="container insta-mobile">
-    <div class="row">
-      <div class="col col-xs-12">
-        <% @popular[0..2].each do |popular| %>
-          <div class="col col-xs-4" >
-            <a href="#" class=""><%= image_tag popular.images.standard_resolution.url %></a>
-          </div>
-        <% end %>
-    </div>
-  </div>
-</div> -->
 
   <div class="social container">
     <div class="row text-center">
@@ -66,8 +29,5 @@
     </div>
     <p>© GUM Creative 2018</p>
   </div>
-
-
-
 
 </footer>
