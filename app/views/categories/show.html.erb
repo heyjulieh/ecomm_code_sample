@@ -18,6 +18,12 @@
         Toys
       <% end %>
     </h3>
+    <% if @items.count == 0 %>
+      <h5 class="no-items">
+        There are currently 0 items under this category.<br /><br />
+        <a href="/">Head back to the main page.</a>
+      </h5>
+    <% else %>
       <% @items.each do |item| %>
         <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
           <div class="items">
@@ -38,6 +44,7 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
 <%= render "layouts/footer_simple" %>

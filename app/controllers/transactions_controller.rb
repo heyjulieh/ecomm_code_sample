@@ -6,11 +6,9 @@ class TransactionsController < ApplicationController
     gon.client_token = generate_client_token
     cart_ids = $redis.smembers current_user_cart
     @cart_items = Item.find(cart_ids)
-    @popular = Instagram.user_recent_media
   end
 
   def create
-    @popular = Instagram.user_recent_media
     unless current_user.has_payment_info?
       @result = Braintree::Transaction.sale(
                   amount: current_user.cart_total_price,
@@ -39,16 +37,12 @@ class TransactionsController < ApplicationController
     if @result.success?
       current_user.update(braintree_customer_id: @result.transaction.customer_details.id) unless current_user.has_payment_info?
       current_user.purchase_cart_items!
-
       redirect_to summary_path, notice: "Your order ID: #{@result.transaction.id}. You paid: $#{@result.transaction.amount}."
     else
       flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
       gon.client_token = generate_client_token
       render :new
     end
-  end
-  def popular
-    @popular = Instagram.user_recent_media
   end
 
 private

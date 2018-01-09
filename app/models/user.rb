@@ -27,6 +27,10 @@ class User < ApplicationRecord
     $redis.del "cart#{id}"
   end
 
+  def delete_cart
+    $redis.del "cart#{id}"
+  end
+
   def purchase(item)
     items << item unless purchase?(item)
   end

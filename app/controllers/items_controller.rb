@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @popular = Instagram.user_recent_media
+    @latest = Item.last(8).reverse
   end
 
   # GET /items/1
@@ -61,7 +62,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to items_url, notice: 'Item was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -247,6 +247,19 @@ nav.navbar {
   letter-spacing: 2px;
   color: $light-black;
 }
+h5 {
+  padding-left: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  a, a:visited {
+    color: grey;
+    padding-bottom: 10px;
+  }
+  a:hover, a:active, a:focus {
+    color: $baby-green;
+    text-decoration: none;
+  }
+}
 h4 {
   padding-bottom: 20px;
   padding-left: 15px;
@@ -372,6 +385,10 @@ h3.subsection {
       padding-left: 0px;
       margin-left: 0px;
     }
+    h5 {
+      padding-left: 0px;
+      margin-left: 0px;
+    }
     .btn-danger {
       display: inline-block;
       padding: 10px;
@@ -380,7 +397,7 @@ h3.subsection {
       font-weight: 400;
       background-color: $gold;
     }
-    a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited {
+    a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited, a.btn-danger:focus {
       text-decoration: none;
       color: black;
     }
@@ -582,18 +599,19 @@ h3.subsection {
   }
   h5.no-items {
     display:inline-block;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: $light-black;
     margin-top: 50px;
     margin-bottom: 80px;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
   }
   h6.no-items {
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 200;
-    color: $light-red;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: $light-black;
     margin-bottom: 15px;
   }
   .cart-amount {
