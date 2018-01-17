@@ -27,7 +27,7 @@ class User < ApplicationRecord
     $redis.del "cart#{id}"
   end
 
-  def delete_cart
+  def delete_cart!
     $redis.del "cart#{id}"
   end
 
@@ -37,6 +37,19 @@ class User < ApplicationRecord
 
   def purchase?(item)
     items.include?(item)
+  end
+
+  def countdown(seconds)
+    limit = Time.now + seconds
+    while Time.now < limit
+      t = Time.at(limit.to_i - Time.now.to_i)
+      puts t.strftime('%M:%S')
+      sleep 1
+    end
+    get_cart_items.each { |item| item.update_columns(countdown: item.countdown = 0) }
+    get_cart_items.each { |item| item.update_columns(quantity: item.quantity = 1 ) }
+    get_cart_items.each { |item| item.update_columns(status: item.status = "Available" ) }
+    $redis.del "cart#{id}"
   end
 
 

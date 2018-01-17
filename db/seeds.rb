@@ -18,6 +18,7 @@ items = Item.create([
     quantity: 1,
     size: "One-Size",
     fit: "True to size",
+    status: "Available",
     price: 75,
     images: ["https://s-media-cache-ak0.pinimg.com/736x/2d/e9/f8/2de9f8e81b586173874b456a7faca1f5--beanies-streetwear.jpg"],
     tags: ["hat", "hats", "accessory", "accesories", "supreme", "denim", "cap", "caps", "5-panel", "logo", "s logo"]
@@ -33,6 +34,7 @@ items = Item.create([
     quantity: 1,
     size: "One-Size",
     fit: "True to size",
+    status: "Available",
     price: 70,
     images: ["http://static.highsnobiety.com/wp-content/uploads/2013/05/supreme-acid-wash-crusher-0.jpg"],
     tags: ["hat", "hats", "accessory", "accesories", "supreme", "denim", "bucket", "bucket hat"]
@@ -48,6 +50,7 @@ items = Item.create([
     quantity: 1,
     size: "One-Size",
     fit: "True to size",
+    status: "Available",
     price: 85,
     images: ["https://i.pinimg.com/564x/23/7c/b4/237cb48e71efa8cd6adecbca73ef557f.jpg"],
     tags: ["hat", "hats", "accessory", "accesories", "supreme", "denim", "cap", "caps", "jordan", "jumpman", "jordan x supreme"]
@@ -63,6 +66,7 @@ items = Item.create([
     quantity: 1,
     size: "XL",
     fit: "Runs small",
+    status: "Available",
     price: 200,
     images: ["http://d1gb2jjgc1xisz.cloudfront.net/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/A/Z/AZ-T229-051-1-3.jpg"],
     tags: ["tops", "short sleeve", "t-shirt", "t-shirts", "tees", "short sleeves", "black", "comme des garconne", "cdg"]
@@ -78,6 +82,7 @@ items = Item.create([
     quantity: 1,
     size: "10",
     fit: "Runs .5 down",
+    status: "Available",
     price: 280,
     images: ["https://www.flightclub.com/media/catalog/product/cache/1/image/1600x1140/9df78eab33525d08d6e5fb8d27136e95/0/2/021536_1.jpg"],
     tags: ["shoes", "high-top", "high", "special force", "sf", "special force air force 1", "air force", "special", "sf af1", "sf af", "sf air force 1", "nike", "sf air force 1 high" "special force air force 1 high"]
@@ -93,6 +98,7 @@ items = Item.create([
     quantity: 1,
     size: "10",
     fit: "Runs .5 down",
+    status: "Available",
     price: 280,
     images: ["https://stockx-360.imgix.net/nike-sf-air-force-1-all-white-complex_TruView/Images/nike-sf-air-force-1-all-white-complex_TruView/Lv2/img26.jpg?auto=format,compress&w=1117"],
     tags: ["shoes", "high-top", "high", "special force", "sf", "special force air force 1", "air force", "air force 1", "special", "sf af1", "sf af", "sf air force 1", "nike", "sf air force 1 high" "special force air force 1 high", "complex", "complexcon", "complexcon air force 1", "complexcon sf air force 1", "complexcon special force air force 1", "complexcon sf af 1"]
@@ -108,6 +114,7 @@ items = Item.create([
     quantity: 1,
     size: "L",
     fit: "True to size",
+    status: "Available",
     price: 300,
     images: ["https://process.filestackapi.com/AazSisOjUQx2TZJQX0PdNz/rotate=deg:exif/resize=width:1200,height:1600/output=compress:true,quality:70,strip:true/ooA4j5uGTVCdtEqs8G7m+palace-blazed-zip-bomber-black-fall-2017"],
     tags: ["tops", "long-sleeve", "long sleeve", "jacket", "black", "palace", "blazed", "bomber", "bomber jacket", "blazed bomber jacket"]
@@ -123,6 +130,7 @@ items = Item.create([
     quantity: 1,
     size: "10",
     fit: "True to Size",
+    status: "Available",
     price: 190,
     images: ["https://stockx.imgix.net/Adidas-Ultra-Boost-ATR-Mid-Green-Night.png?fit=fill&bg=FFFFFF&w=1400&h=1000&auto=format,compress&trim=color"],
     tags: ["shoes", "mid", "green", "adidas", "ultra boost", "ultraboost", "mid green night", "green night", "ultra boost mid", "ultraboost mid", "adidas ultra boost", "adidas ultraboost", "adidas ultra boost mid green", "adidas ultra boost mid green night" "ultra boost green", "green ultra boost", "green ultraboost", "green ultra boost"]

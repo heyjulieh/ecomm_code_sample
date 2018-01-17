@@ -36,10 +36,13 @@ class TransactionsController < ApplicationController
 
     if @result.success?
       current_user.update(braintree_customer_id: @result.transaction.customer_details.id) unless current_user.has_payment_info?
+      current_user.get_cart_items.each { |item| item.update_columns(quantity: item.quantity = 0) }
+      current_user.get_cart_items.each { |item| item.update_columns(status: item.status = "SOLD") }
       current_user.purchase_cart_items!
       redirect_to summary_path, notice: "Your order ID: #{@result.transaction.id}. You paid: $#{@result.transaction.amount}."
+
     else
-      flash[:alert] = "Something went wrong while processing your transaction. Please try again!"
+      redirect_to root_path, notice: "Something messed up while processing your order. Please try again."
       gon.client_token = generate_client_token
       render :new
     end
@@ -54,13 +57,8 @@ private
     end
   end
 
-  def summary
-    @popular = Instagram.user_recent_media
-  end
-
   def check_cart
    if current_user.get_cart_items.blank?
-     flash[:alert] = "Please add some items to your cart before processing your transaction."
    end
   end
 

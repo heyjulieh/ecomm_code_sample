@@ -2,24 +2,21 @@
 <div class="new-blog container-fluid">
   <% if current_user %>
     <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
-    <div class="col col-sm-2">
+    <div class="col col-xs-1 col-sm-3 col-md-4">
     </div>
-    <div class="col col-sm-8">
+    <div class="col col-xs-10 col-sm-6 col-md-4">
       <h1>New Blog Post</h1>
       <%= render 'form', blog: @blog %>
       <%= link_to blogs_path do %>
         <i class="fa fa-reply"></i> Back to all Blogs
       <% end %>
     </div>
-    <div class="col col-sm-2">
+    <div class="col col-xs-1 col-sm-3 col-md-4">
     </div>
     <% else %>
         <h1>You do not have access to this page.</h1>
     <% end %>
   <% else %>
     <h1>You do not have access to this page.</h1><br />
-  <% end %>
-  <%= link_to blogs_path do %>
-    <i class="fa fa-reply"></i> Back to all Blogs
   <% end %>
 </div>

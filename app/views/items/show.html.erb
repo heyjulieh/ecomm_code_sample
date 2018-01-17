@@ -7,18 +7,15 @@
     <div class="col col-sm-6 col-md-6 show-item-info">
       <h3><%= @item.brand %> <span><%= @item.release_year %></span></h3>
       <h4><%= @item.colorway %> <%= @item.description %></h4><br />
-      <h5><%= (current_user && current_user.purchase?(@item)) ? "Sold" : "$#{@item.price}" %></h5>
+      <h5>$<%= @item.price %></h5>
       <h5><%= @item.size %></h5>
-      <p>Condition: <%= @item.new_or_used %>, <%= @item.condition %></p>
-      <p><%= @item.fit %></p>
+      <p><%= @item.new_or_used %>, <%= @item.condition %></p>
+      <p><%= @item.status %></p>
 
-      <%if signed_in?%>
+      <%if signed_in? && @item.status != "SOLD" && @item.status != "Selling in Progress"%>
         <%=link_to "", class: "btn-danger", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
           <span><%=@cart_action%></span> Cart
         <%end%>
-        <p class="label mb1">
-          <%= (current_user && current_user.purchase?(@item)) ? "Sold" : "$#{@item.price}" %>
-        </p>
       <%end%>
     </div>
   </div>

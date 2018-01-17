@@ -18,12 +18,14 @@ $gold: #FFDC73;
   color: $light-red;
   padding-top: 120px;
   padding-bottom: 30px;
-  margin-left: 0px;
-  margin-top: 0;
+  padding-left: 0px !important;
+  margin-left: 0px !important;
+  margin-top: 20px;
   margin-bottom: 0;
   border-radius: 0px;
   width: 100%;
   text-decoration: none;
+  text-transform: uppercase !important;
   list-style: none;
 }
 #error_explanation > h2
@@ -69,13 +71,17 @@ nav.navbar {
   border: 0;
   margin: auto;
   text-transform: lowercase;
+  .navbar-header {
+    height: 80px;
+  }
   .navbar-brand, .navbar-brand:visited {
     font-size: 35px;
-    letter-spacing: 3px;
-    color: $baby-green;
-    font-weight: 700;
+    letter-spacing: 0px;
+    color: $light-black;
+    font-weight: 300;
     .logo {
-      height: 35px;
+      height: 50px;
+      display: inline-block;
     }
   }
   .navbar-brand:hover {
@@ -269,7 +275,8 @@ h4 {
   color: $light-black;
 }
 h3.subsection {
-  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 200;
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -898,19 +905,21 @@ h3.subsection {
 }
 .new-blog {
   width: 100%;
+  padding-top: 150px;
   padding-bottom: 50px;
   h1 {
     display: inline-block;
     margin-top: 30px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: $light-red;
+    color: $light-black;
     letter-spacing: 2px;
   }
   .field {
     margin-top: 5px;
     margin-bottom: 10px;
     input, textarea {
+      background-color: $gold;
       width: 100%;
       border-radius: 0px;
       border: 0px;
@@ -927,6 +936,8 @@ h3.subsection {
   }
   .btn {
     background-color: $pale-green;
+    letter-spacing: 1px;
+    border-radius: 0px;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 10px;
@@ -958,14 +969,14 @@ footer {
     margin: 0px 0px 30px 0px;
 
     img {
-      height: 50vh;
+      width: 100%;
       flex-shrink: 0;
-      min-width: 100%;
-      min-height: 100%
+      min-height: auto;
     }
     .col {
       padding:0px;
       margin: 0px;
+      overflow: hidden;
     }
     .row {
       width: 100%;
@@ -974,7 +985,7 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden
+      overflow: hidden;
     }
 
     span {
@@ -985,34 +996,7 @@ footer {
       padding-left: 5px;
     }
   }
-  @media (max-width: 768px) {
-    .instagram {
-      img {
-        height: 30vh;
-      }
-    }
-  }
-  @media (max-width: 540px) {
-    .instagram {
-      img {
-        height: 20vh;
-      }
-    }
-  }
-  @media (max-width: 355px) {
-    .instagram {
-      img {
-        height: 18vh;
-      }
-    }
-  }
-  @media (max-width: 325px) {
-    .instagram {
-      img {
-        height: 16vh;
-      }
-    }
-  }
+
   .social {
     background-color: $pale-green;
     padding-left: 0px;
