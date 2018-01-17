@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :newsletters
   resources :blogs
   resources :transactions, only: [:new, :create, :summary]
   get '/transactions/summary', to: 'transactions#summary', as: 'summary'

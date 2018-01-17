@@ -3,6 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Place this data between the <head> tags of your website -->
+    <meta name="description" content="Gum Store: Sweet@ss Drop Resells" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Gum Store">
+    <meta itemprop="description" content="Gum Store: Sweet@ss Drop Resells">
+    <meta itemprop="image" content="./assets/images/gum_screenshot.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="article">
+    <meta name="twitter:title" content="Gum Store">
+    <meta name="twitter:description" content="Gum Store: Sweet@ss Drop Resells">
+    <meta name="twitter:image" content="./assets/images/gum_screenshot.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Gum Store" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jowljabber.heroku.com/" />
+    <meta property="og:image" content="./assets/images/gum_screenshot.png" />
+    <meta property="og:description" content="Gum Store: Sweet@ss Drop Resells" />
+    <meta property="og:site_name" content="Gum Store" />
+
+
     <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
     <title><%= content_for?(:title) ? yield(:title) : "gum store" %></title>
     <%= include_gon %>
