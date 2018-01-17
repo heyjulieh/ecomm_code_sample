@@ -23,6 +23,18 @@
             <%=link_to edit_user_registration_path, :class=> "dropdown-toggle", 'data-toggle' => 'dropdown' do%>yo, <%=current_user.first_name %> <span class="caret"></span>
             <%end%>
             <ul class="dropdown-menu">
+              <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
+                <li>
+                  <%=link_to new_item_path, 'data-ajax' => "false" do%>
+                  Add New Item
+                  <%end%>
+                </li>
+                <li>
+                  <%=link_to new_blog_path, 'data-ajax' => "false" do%>
+                  Post New Blog
+                  <%end%>
+                </li>
+              <%end%>
               <li>
                 <%=link_to edit_user_registration_path, 'data-ajax' => "false" do%>
                   Your Settings
