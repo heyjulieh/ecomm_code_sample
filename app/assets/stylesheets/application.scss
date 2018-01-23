@@ -70,9 +70,28 @@ nav.navbar {
   border-radius: 0;
   border: 0;
   margin: auto;
-  text-transform: lowercase;
   .navbar-header {
     height: 80px;
+  }
+  .nav-alert {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: $gold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    .sign-alert  {
+      display: inline-block;
+      text-align: center;
+      padding: auto;
+      margin: auto;
+      font-size: 14px;
+      color: $light-black;
+    }
+  }
+  a {
+    text-transform: lowercase;
   }
   .navbar-brand, .navbar-brand:visited {
     font-size: 35px;
@@ -92,6 +111,7 @@ nav.navbar {
     margin: auto;
     padding: 15px;
     color: $baby-green;
+    text-transform: lowercase;
   }
   a.navbar-nav:hover {
     text-decoration: none;
@@ -113,6 +133,8 @@ nav.navbar {
     .nav-center {
       width:100%;
       text-align: center;
+      margin: 0px;
+      padding: 0px;
       > li {
         float: none;
         display: inline-block;
@@ -166,7 +188,7 @@ nav.navbar {
   .navbar-toggle {
     border: none;
     background: transparent !important;
-    margin-top: 12px;
+    margin-top: 15px;
     margin-right: 5px;
     margin-left: 10px;
     &:hover {
@@ -200,10 +222,6 @@ nav.navbar {
         transform: rotate(0);
       }
     }
-  }
-  .navbar-toggle.navbar-left {
-    float: left;
-    margin-left: 10px;
   }
   .fa {
     font-size: 18px;
@@ -250,7 +268,7 @@ nav.navbar {
 
 .subsection {
   padding-bottom: 50px;
-  padding-top: 150px;
+  padding-top: 200px;
   padding-left: 15px;
   margin: auto;
   text-transform: lowercase;
@@ -377,7 +395,7 @@ h3.subsection {
   }
 }
 .show {
-  padding-top: 150px;
+  padding-top: 200px;
   background-color: white;
   padding-bottom: 50px;
   height: 90vh;
@@ -428,7 +446,7 @@ h3.subsection {
 .form {
   width: 100%;
   padding-bottom: 30px;
-  padding-top: 120px;
+  padding-top: 200px;
   margin: auto;
   color: $light-black;
   text-transform: uppercase;
@@ -772,7 +790,7 @@ h3.subsection {
 }
 .blog {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 200px;
   margin-bottom: 50px;
   @media (min-width: 891px) {
     h1 {
@@ -790,28 +808,27 @@ h3.subsection {
     }
   }
   h1 {
-    color: $light-black;
-    background-color: $light-red;
+    color: $gold;
+    background-color: $light-black;
     padding: 10px;
   }
   h4 {
     display: inline-block;
     height: 65px;
     width: 100%;
-    color: $light-black;
-    background-color: $light-red;
+    color: $gold;
+    background-color: $light-black;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 0px;
   }
   a.title, a.title:active, a.title:visited {
-    color: $light-black;
+    color: $gold;
     text-decoration: none;
   }
-  a.title:hover {
-    color: $light-black;
+  a.title:hover, a.title:focus {
+    color: lightgrey;
     padding-bottom: 10px;
-    border-bottom: 1px solid $light-black;
   }
   .content {
     .col {
@@ -1000,9 +1017,8 @@ footer {
       padding-left: 5px;
     }
   }
-
   .social {
-    background-color: $pale-green;
+    background-color: $gold;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 15px;
@@ -1043,10 +1059,11 @@ footer {
     a, h5 {
       text-transform: uppercase;
       color: grey;
+      font-size: 12px;
       font-weight: 300;
       padding-left: 0px;
       margin-left: 0px;
-      padding-top: 15px;
+      padding-top: 10px;
     }
     a:hover {
       color: $light-black;
@@ -1060,12 +1077,14 @@ footer {
         letter-spacing: 1px;
         font-weight: 300;
         margin-bottom: 5px;
+        font-size: 12px;
       }
       .btn {
         color: white;
         border-radius: 0px;
         border: 0px;
         background-color: $light-black;
+        font-size: 12px;
       }
       .btn:hover {
         color: $baby-green;
@@ -1078,7 +1097,7 @@ footer {
     color: $light-black;
   }
   p {
-    color: $jade;
+    color: grey;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 10px;

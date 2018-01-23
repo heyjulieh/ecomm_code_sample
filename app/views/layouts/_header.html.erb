@@ -1,19 +1,25 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <%if signed_in?%>
-      <%= link_to cart_path, :class => "nav navbar-nav navbar-right pull-right" do%>
-        <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=current_user.cart_count%></span>
-      <%end%>
+    <%if signed_in? == false%>
+      <div class="nav-alert">
+        <p class="sign-alert">
+          Please sign up or sign in to purchase!
+        </p>
+      </div>
     <%end%>
-
-
     <div class="navbar-header">
       <button type="button" class="pull-right navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
         <span class="icon-bar top-bar"></span>
         <span class="icon-bar middle-bar"></span>
         <span class="icon-bar bottom-bar"></span>
       </button>
+      <%if signed_in?%>
+        <%= link_to cart_path, :class => "pull-right navbar-brand" do%>
+          <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=current_user.cart_count%></span>
+        <%end%>
+      <%end%>
       <a class="navbar-brand" href="/"><img class="logo" src="<%= asset_path( 'Gumstore_logo.png' ) %>" /></a></a>
+
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
