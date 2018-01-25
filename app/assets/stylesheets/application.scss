@@ -291,7 +291,6 @@ h5 {
   a, a:visited {
     color: grey;
     padding-bottom: 10px;
-    border-bottom: 1px solid lightgrey;
   }
   a:hover, a:active, a:focus {
     color: $light-black;
@@ -509,6 +508,7 @@ h3.subsection {
       border-top: 0px;
       border-left: 0px;
       border-right: 0px;
+      border-radius: 0px;
       padding: 5px;
       font-weight: 300;
       color: black;
@@ -545,7 +545,6 @@ h3.subsection {
     i {
       font-size: 10px;
       color: grey;
-      padding-left: 5px;
     }
     select {
       background-color: white;
@@ -561,8 +560,10 @@ h3.subsection {
     .actions {
       padding: 0;
       input {
-        color: grey;
-        background-color: $gold;
+        color: white;
+        background-color: $light-black;
+        border: 0px;
+        border-radius: 0px;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: bold;
@@ -572,7 +573,7 @@ h3.subsection {
       }
 
       input:hover {
-        color: $light-black;
+        color: $gold;
       }
     }
   }
@@ -589,7 +590,6 @@ h3.subsection {
       color: grey;
       letter-spacing: 1px;
       padding-bottom: 10px;
-      border-bottom: 1px solid lightgrey;
       }
       a:hover {
         color: $light-black;
@@ -610,24 +610,24 @@ h3.subsection {
     padding-bottom: 0;
   }
   #cancel {
+    text-transform: none !important;
     margin-top: 30px;
     margin-bottom: 40px;
     p {
+      text-transform: none !important;
       margin: 0px;
-      padding: 0px 0px 10px 0px;
+      padding: 0px 0px 5px 0px;
       font-size: 10px;
     }
     .btn {
       color: black;
       border-radius: 0px;
+      border-bottom: 1px solid lightgrey;
       width: 90px;
       background-color: transparent;
-      padding: 5px;
+      padding: 0px 0px 5px 0px;
       margin: 0px;
-      padding-left: 0px !important;
-      padding-right: 0px !important;
       font-size: 10px;
-      text-transform: lowercase;
       text-align: left;
     }
     .btn:hover {
@@ -780,7 +780,6 @@ h3.subsection {
       width: 100%;
       display: inline-block;
       padding-bottom: 10px;
-      border-bottom: 1px solid lightgrey;
       margin-bottom: 10px;
     }
   }
