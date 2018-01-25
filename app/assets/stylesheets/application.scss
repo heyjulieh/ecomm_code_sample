@@ -76,6 +76,7 @@ nav.navbar {
   }
   .navbar-default, .navbar-collapse {
     border: 0px !important;
+    padding: 20px;
   }
   .nav-alert {
     text-align: center;
@@ -102,7 +103,8 @@ nav.navbar {
     letter-spacing: 0px;
     color: $light-black;
     font-weight: 300;
-    padding-top: 10px;
+    padding-top: 25px;
+    padding-left: 20px;
     .logo {
       height: 50px;
       display: inline-block;
@@ -131,11 +133,17 @@ nav.navbar {
     border-bottom: 0px;
   }
   a.sign {
+    text-align: center;
+    width: 77px;
+    display: inline-block;
+    background-color: $light-black;
     font-weight: 200px !important;
-    color: $light-black !important;
-    margin-right: 15px;
+    color: $gold !important;
+    margin-left: 15px;
+    margin-top: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 5px;
   }
 
   @media (min-width: 768px) {
@@ -165,6 +173,7 @@ nav.navbar {
   .open > a, .open > a:hover, .open > a:focus {
     background-color: transparent !important;
     color: lightgrey !important;
+    margin-left: 25px;
   }
   .dropdown-menu {
     background-color: $light-black;
@@ -184,7 +193,6 @@ nav.navbar {
     color: white;
     background-color: transparent;
     padding: 0px;
-    margin: 0px;
   }
   .dropdown-menu > li > a:hover {
     color: $gold !important;
@@ -197,9 +205,9 @@ nav.navbar {
   .navbar-toggle {
     border: none;
     background: transparent !important;
-    margin-top: 15px;
     margin-right: 5px;
     margin-left: 10px;
+    margin-top: 22px;
     &:hover {
       background: transparent !important;
     }
@@ -314,7 +322,7 @@ h3.subsection {
 .featured {
   background-color: white;
   width: 100%;
-  padding: 0 0 50px 0;
+  padding: 0;
   .container {
     margin: 0px;
     padding: 0px;
@@ -398,7 +406,7 @@ h3.subsection {
         text-align: left;
         margin: auto;
         padding: 0px;
-        text-transform: lowercase;
+        text-transform: uppercase;
       }
     }
   }
@@ -1021,7 +1029,7 @@ footer {
   .instagram {
     width: 100%;
     background-color: white;
-    padding: 20px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     margin: 0px 0px 30px 0px;
 
     img {
