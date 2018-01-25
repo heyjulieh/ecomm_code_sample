@@ -71,7 +71,11 @@ nav.navbar {
   border: 0;
   margin: auto;
   .navbar-header {
-    height: 80px;
+    height: 65px;
+    border-bottom: 0px !important;
+  }
+  .navbar-default, .navbar-collapse {
+    border: 0px !important;
   }
   .nav-alert {
     text-align: center;
@@ -98,6 +102,7 @@ nav.navbar {
     letter-spacing: 0px;
     color: $light-black;
     font-weight: 300;
+    padding-top: 10px;
     .logo {
       height: 50px;
       display: inline-block;
@@ -110,7 +115,7 @@ nav.navbar {
     display: inline-block;
     margin: auto;
     padding: 15px;
-    color: $baby-green;
+    color: $light-black;
     text-transform: lowercase;
   }
   a.navbar-nav:hover {
@@ -126,7 +131,11 @@ nav.navbar {
     border-bottom: 0px;
   }
   a.sign {
-    color: $baby-green !important;
+    font-weight: 200px !important;
+    color: $light-black !important;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   @media (min-width: 768px) {
@@ -155,7 +164,7 @@ nav.navbar {
   }
   .open > a, .open > a:hover, .open > a:focus {
     background-color: transparent !important;
-    color: $baby-green !important;
+    color: lightgrey !important;
   }
   .dropdown-menu {
     background-color: $light-black;
@@ -178,7 +187,7 @@ nav.navbar {
     margin: 0px;
   }
   .dropdown-menu > li > a:hover {
-    color: $baby-green !important;
+    color: $gold !important;
     background-color: transparent;
   }
   .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
@@ -282,9 +291,10 @@ h5 {
   a, a:visited {
     color: grey;
     padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
   }
   a:hover, a:active, a:focus {
-    color: $baby-green;
+    color: $light-black;
     text-decoration: none;
   }
 }
@@ -362,8 +372,8 @@ h3.subsection {
         top: 150px;
         padding-right: 10px;
         padding-left: 10px;
-        background-color: $pale-green;
-        color: $light-black;
+        background-color: $light-black;
+        color: white;
       }
       a {
         color: white;
@@ -405,6 +415,11 @@ h3.subsection {
     }
   }
   .show-item-info {
+    i {
+      color: grey;
+      font-weight: 200;
+    }
+
     h3 {
       text-transform: uppercase;
       color: $light-black;
@@ -428,12 +443,12 @@ h3.subsection {
     }
     a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited, a.btn-danger:focus {
       text-decoration: none;
-      color: black;
+      color: $light-black;
     }
     .btn {
       display: inline-block;
-      background-color: $pale-green;
-      color: $light-black;
+      background-color: $light-black;
+      color: white;
       font-weight: 200;
       border-radius: 0;
       letter-spacing: 1px;
@@ -441,6 +456,20 @@ h3.subsection {
     h5 {
       text-transform: uppercase;
     }
+    a, a:visited, a:active {
+      color: $light-black;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+    }
+    a:hover {
+      color: $light-black;
+      text-decoration: none;
+    }
+    .delete:hover {
+      text-decoration: line-through;
+      color: $light-red;
+    }
+
   }
 }
 .form {
@@ -493,18 +522,19 @@ h3.subsection {
     }
 
     .letsgo {
-      color: grey;
-      background-color: $gold;
+      color: white;
+      background-color: $light-black;
+      border-radius: 0px;
+      border: 0px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: bold;
       padding: 10px;
       width: 100px;
       margin-top: 20px;
     }
 
     .letsgo:hover {
-      color: $light-black;
+      color: $gold;
     }
     .date {
       margin-bottom: 20px;
@@ -558,6 +588,8 @@ h3.subsection {
       a {
       color: grey;
       letter-spacing: 1px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid lightgrey;
       }
       a:hover {
         color: $light-black;
@@ -635,6 +667,7 @@ h3.subsection {
     margin-left: 0px !important;
     padding-left: 0px !important;
   }
+
   h6.no-items {
     display: inline-block;
     text-transform: uppercase;
@@ -687,7 +720,7 @@ h3.subsection {
         color: grey;
       }
       a:hover {
-        color: $baby-green;
+        color: $light-black;
         text-decoration: none;
       }
     }
@@ -736,13 +769,14 @@ h3.subsection {
     margin-bottom: 50px;
     a {
       text-transform: uppercase;
-      color: $light-red;
+      color: $light-black;
     }
     a:hover {
       text-decoration: none;
     }
     .price {
-      background-color: $pale-green;
+      background-color: $light-black;
+      color: white;
       width: 100%;
       display: inline-block;
       padding-bottom: 10px;
@@ -853,7 +887,7 @@ h3.subsection {
         text-transform: lowercase;
       }
       a:hover {
-        color: $baby-green;
+        color: $light-black;
         text-decoration: none;
       }
       .delete:hover {
@@ -868,7 +902,7 @@ h3.subsection {
       }
       a:hover {
         text-decoration: none;
-        color: $baby-green;
+        color: $light-black;
       }
       .fa {
         color: $light-red;
@@ -906,21 +940,22 @@ h3.subsection {
     padding-bottom: 20px;
     text-align: center;
     .btn {
-      background-color: $pale-green;
+      background-color: $light-black;
+      color: white;
       border-radius: 0px;
       a, a:visited, a:active {
-        color: $light-black;
+        color: white;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: bold;
       }
       a:hover {
-        color: $light-red;
+        color: $gold;
         text-decoration: none;
       }
     }
     .btn:hover {
-      color: $light-red;
+      color: $gold;
     }
   }
 }
@@ -956,7 +991,8 @@ h3.subsection {
     }
   }
   .btn {
-    background-color: $pale-green;
+    background-color: $light-black;
+    color: white;
     letter-spacing: 1px;
     border-radius: 0px;
     font-weight: bold;
@@ -1087,7 +1123,7 @@ footer {
         font-size: 12px;
       }
       .btn:hover {
-        color: $baby-green;
+        color: $light-black;
       }
     }
   }

@@ -1,6 +1,30 @@
-<h1>Editing Item</h1>
+<div class="new-blog container-fluid">
+  <% if current_user %>
+    <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
+    <div class="col col-xs-1 col-sm-2 col-md-3">
+    </div>
+    <div class="col col-xs-10 col-sm-8 col-md-6">
+      <h1>Edit Item</h1>
+      <%= render 'form', item: @item %>
+      <%= link_to 'View this item', @item %><br /><br />
 
-<%= render 'form', item: @item %>
+      <%= link_to items_path do%>
+        <i class="fa fa-reply"></i> Back to all Items
+      <% end %>
+    </div>
 
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+    <div class="col col-xs-1 col-sm-2 col-md-3">
+    </div>
+    <% else %>
+      <h1>You do not have access to this page.</h1><br />
+      <%= link_to items_path do %>
+        <i class="fa fa-reply"></i> Back to all Items
+      <% end %>
+    <% end %>
+  <% else %>
+    <h1>You do not have access to this page.</h1><br />
+    <%= link_to items_path do %>
+      <i class="fa fa-reply"></i> Back to all Items
+    <% end %>
+  <% end %>
+</div>

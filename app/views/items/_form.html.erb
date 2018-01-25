@@ -85,17 +85,17 @@
   <% else %>
     <div class="field">
       <%= form.label :images %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[0] %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[1] %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[2] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[0] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[1] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[2] %>
     </div>
 
     <div class="field">
       <%= form.label :tags %>
-      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[0] %>
-      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[1] %>
-      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[2] %>
-      <%= form.text_area :tags, id: :blog_tags, multiple: true, value: @blog.tags[3] %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: @item.tags[0] %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: @item.tags[1] %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: @item.tags[2] %>
+      <%= form.text_area :tags, id: :item_tags, multiple: true, value: @item.tags[3] %>
     </div>
   <%end%>
 
