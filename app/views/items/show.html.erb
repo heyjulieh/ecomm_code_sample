@@ -20,7 +20,7 @@
         <%end%>
       <%end%>
       <% if current_user %>
-        <% if current_user.email == 'heyjulieh@gmail.com' || current_user.email == 'jeffl1nen@gmail.com' %>
+        <% if current_user.status == 'admin' %>
         <br /><br />
           <i class="fa fa-pencil"></i> <%= link_to 'Edit This', edit_item_path(@item) %><br />
           <i class="fa fa-times"></i> <%= link_to 'Delete This', @item, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>

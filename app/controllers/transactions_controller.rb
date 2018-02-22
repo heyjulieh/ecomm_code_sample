@@ -6,9 +6,11 @@ class TransactionsController < ApplicationController
     gon.client_token = generate_client_token
     cart_ids = $redis.smembers current_user_cart
     @cart_items = Item.find(cart_ids)
+    @newsletter = Newsletter.new
   end
 
   def create
+    @newsletter = Newsletter.new
     unless current_user.has_payment_info?
       @result = Braintree::Transaction.sale(
                   amount: current_user.cart_total_price,

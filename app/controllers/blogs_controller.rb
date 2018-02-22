@@ -6,21 +6,20 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
     @popular = Instagram.user_recent_media
-
+    @newsletter = Newsletter.new
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
     @popular = Instagram.user_recent_media
-
+    @newsletter = Newsletter.new
   end
 
   # GET /blogs/new
   def new
     @blog = Blog.new
     @popular = Instagram.user_recent_media
-
   end
 
   # GET /blogs/1/edit
@@ -65,7 +64,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+      format.html { redirect_to blogs_url, notice: 'Blog was successfully deleted.' }
       format.json { head :no_content }
     end
   end

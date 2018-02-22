@@ -57,10 +57,7 @@
       <div class="col col-xs-12 col-sm-4">
         <div class="content">
           <h5>Stay posted with the newsletter</h5>
-          <form action="" method="post">
-            <input type="text" id="" name="" class="" placeholder="your@email.com">
-            <br /><input type="submit" value="subscribe" class="btn" />
-          </form>
+          <%= render "newsletters/form", :object => @newsletter %>
         </div>
       </div>
     </div>

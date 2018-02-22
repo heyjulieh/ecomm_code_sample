@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @items = Item.all
     @popular = Instagram.user_recent_media
     @latest = Item.last(8).reverse
+    @newsletter = Newsletter.new
   end
 
   # GET /items/1
@@ -15,6 +16,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @cart_action = @item.cart_action current_user.try :id
     @popular = Instagram.user_recent_media
+    @newsletter = Newsletter.new
   end
 
   # GET /items/new

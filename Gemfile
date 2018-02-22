@@ -70,6 +70,7 @@ gem 'braintree', '~> 2.78.0'
 gem 'figaro', '~> 1.1.1'
 gem 'gon', '~> 6.2.0'
 gem 'instagram'
+gem 'exception_handler'
 
 source "https://rubygems.org"
 ruby "2.4.0"

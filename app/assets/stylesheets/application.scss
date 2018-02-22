@@ -16,7 +16,7 @@ $gold: #FFDC73;
   letter-spacing: 1px;
   font-size: 16px;
   color: $light-red;
-  padding-top: 120px;
+  padding-top: 180px;
   padding-bottom: 30px;
   padding-left: 0px !important;
   margin-left: 0px !important;
@@ -27,6 +27,9 @@ $gold: #FFDC73;
   text-decoration: none;
   text-transform: uppercase !important;
   list-style: none;
+}
+.access {
+  padding-top: 50px;
 }
 #error_explanation > h2
  {
@@ -50,7 +53,7 @@ $gold: #FFDC73;
    display: none;
 }
 .wrapper {
-  min-height: 100vh;
+  min-height: 90vh;
   height: auto !important;
   height: 100%;
   margin-bottom: 40px;
@@ -145,7 +148,6 @@ nav.navbar {
     padding-bottom: 5px;
     margin-bottom: 5px;
   }
-
   @media (min-width: 768px) {
     .nav-center {
       width:100%;
@@ -1130,7 +1132,7 @@ footer {
         font-size: 12px;
       }
       .btn:hover {
-        color: $light-black;
+        color: $gold;
       }
     }
   }
@@ -1144,7 +1146,8 @@ footer {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 10px;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 50px;
+    text-align: right;
+    padding-right: 20px;
   }
 }

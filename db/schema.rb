@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117204815) do
+ActiveRecord::Schema.define(version: 20180222222534) do
 
   create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -18,6 +18,19 @@ ActiveRecord::Schema.define(version: 20180117204815) do
     t.text "images"
     t.text "tags"
     t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "false", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "class_name"
+    t.text "status"
+    t.text "message"
+    t.text "trace"
+    t.text "target"
+    t.text "referrer"
+    t.text "params"
+    t.text "user_agent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,6 +99,7 @@ ActiveRecord::Schema.define(version: 20180117204815) do
     t.string "zip_code"
     t.string "country"
     t.string "state"
+    t.string "status"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

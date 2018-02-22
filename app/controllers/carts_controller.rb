@@ -5,6 +5,7 @@ class CartsController < ApplicationController
     cart_ids = $redis.smembers current_user_cart
     @cart_items = Item.find(cart_ids)
     @sample = (Item.all).sample(6)
+    @newsletter = Newsletter.new
   end
 
   def add

@@ -1,5 +1,5 @@
 class NewslettersController < ApplicationController
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
+  before_action :set_newsletter, only: [:show, :destroy]
 
   # GET /newsletters
   # GET /newsletters.json
@@ -17,10 +17,6 @@ class NewslettersController < ApplicationController
     @newsletter = Newsletter.new
   end
 
-  # GET /newsletters/1/edit
-  def edit
-  end
-
   # POST /newsletters
   # POST /newsletters.json
   def create
@@ -28,24 +24,10 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
+        format.html { redirect_to root_path, notice: 'You have officially signed up for the newsletter.' }
         format.json { render :show, status: :created, location: @newsletter }
       else
         format.html { render :new }
-        format.json { render json: @newsletter.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /newsletters/1
-  # PATCH/PUT /newsletters/1.json
-  def update
-    respond_to do |format|
-      if @newsletter.update(newsletter_params)
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @newsletter }
-      else
-        format.html { render :edit }
         format.json { render json: @newsletter.errors, status: :unprocessable_entity }
       end
     end

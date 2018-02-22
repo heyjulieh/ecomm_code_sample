@@ -1,27 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Newsletters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @newsletters.each do |newsletter| %>
-      <tr>
-        <td><%= newsletter.email %></td>
-        <td><%= link_to 'Show', newsletter %></td>
-        <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Destroy', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container-fluid new-blog wrapper">
+  <% if current_user %>
+    <% if current_user.status == 'admin' %>
+      <div class="row">
+        <h3 class="subsection">Newsletter Email Subscriptions</h3>
+        <ul>
+          <% @newsletters.each do |newsletter| %>
+              <li>
+                <%= newsletter.email %>
+                <% if current_user %>
+                  <% if current_user.status == 'admin' %>
+                    <div class="pull-right">
+                      <i class="fa fa-pencil"></i> <%= link_to 'Edit This', edit_blog_path(blog) %><br />
+                      <i class="fa fa-times"></i> <%= link_to 'Delete This', blog, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <h1 class="access">You do not have access to this page.</h1><br />
+      <%= link_to root_path do %>
+        <i class="fa fa-reply"></i> Back to the main page
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Newsletter', new_newsletter_path %>
+  <% else %>
+    <h1 class="access">You do not have access to this page.</h1><br />
+    <%= link_to root_path do %>
+      <i class="fa fa-reply"></i> Back to the main page
+    <% end %>
+  <% end %>
+</div>
