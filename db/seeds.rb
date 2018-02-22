@@ -68,7 +68,7 @@ items = Item.create([
     fit: "Runs small",
     status: "Available",
     price: 200,
-    images: ["http://d1gb2jjgc1xisz.cloudfront.net/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/A/Z/AZ-T229-051-1-3.jpg"],
+    images: ["https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/0/6/06-03-2017_commedesgarcons_playwomenslargehearttee_black_p1t229-bk_sp_1.jpg"],
     tags: ["tops", "short sleeve", "t-shirt", "t-shirts", "tees", "short sleeves", "black", "comme des garconne", "cdg"]
   },
   {
