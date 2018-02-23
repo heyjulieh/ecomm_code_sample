@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def show
     cart_ids = $redis.smembers current_user_cart
@@ -20,13 +20,13 @@ class CartsController < ApplicationController
     end
   end
 
-
   def remove
     item = Item.find params[:item_id]
     if item.quantity = 0
       $redis.srem current_user_cart, params[:item_id]
-      render json: current_user.cart_count, status: 200
+      current_user.countdown(0)
       item.update_columns(quantity: item.quantity + 1)
+      render json: current_user.cart_count, status: 200
       item.update_columns(status: item.status = "Available")
     end
   end

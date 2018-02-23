@@ -1,5 +1,20 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  def new
+    super
+  end
+
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      current_user.move_to(@user) if current_user && current_user.guest?
+      sign_up("user", @user) || sign_in ("user", @user)
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def sign_up_params

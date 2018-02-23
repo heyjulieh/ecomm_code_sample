@@ -9,9 +9,9 @@ $(window).load ->
     if $this.data('target') == 'Add to'
       url = $this.data('addurl')
       new_target = "Remove from"
-    # else
-    #   url = $this.data('removeurl')
-    #   new_target = "Add to"
+    else
+      url = $this.data('removeurl')
+      new_target = "Add to"
     $.ajax url: url, type: 'put', success: (data) ->
       $('.cart-count').html(data)
       location.reload();
@@ -26,4 +26,4 @@ $(window).load ->
       $('.cart-count').html(data)
       $('.cart-money').html(data)
       $this.closest('.cart-item').slideUp()
-      location.reload();
+      # location.reload();

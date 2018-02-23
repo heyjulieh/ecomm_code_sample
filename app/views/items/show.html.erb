@@ -14,7 +14,7 @@
       <%if @item.status == "Selling in Progress"%>
         <p><i>This item will be back on the marketplace<br />if it is not purchased within 10 minutes.</i></p>
       <%end%>
-      <%if signed_in? && @item.status != "SOLD" && @item.status != "Selling in Progress"%>
+      <%if @item.status != "SOLD" && @item.status != "Selling in Progress"%>
         <%=link_to "", class: "btn-danger addcart", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
           <span><%=@cart_action%></span> Cart
         <%end%>

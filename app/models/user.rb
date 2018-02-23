@@ -2,6 +2,12 @@ class User < ApplicationRecord
   has_many :purchases, foreign_key: :buyer_id
   has_many :items, through: :purchases
 
+  def move_to(user)
+    get_cart_items.each { |item| purchase(item) }
+    $redis.scard "cart#{id}"
+    purchases.update_all(user_id: user.id)
+  end
+
   def cart_count
     $redis.scard "cart#{id}"
   end
