@@ -3,9 +3,21 @@ class User < ApplicationRecord
   has_many :items, through: :purchases
 
   def move_to(user)
-    get_cart_items.each { |item| purchase(item) }
-    $redis.scard "cart#{id}"
-    purchases.update_all(user_id: user.id)
+    get_cart_items.each { |item| add(item) }
+    cart_ids = $redis.smembers "cart#{id}"
+    Item.find(cart_ids).update_all(user_id: user.id)
+  end
+
+  def add
+    item = Item.find params[:item_id]
+    if item.quantity > 0
+      $redis.sadd current_user_cart, params[:item_id]
+      render json: current_user.cart_count, status: 200
+      item.update_columns(quantity: item.quantity - 1)
+      item.update_columns(status: item.status = "Selling in Progress")
+      item.update_columns(countdown: item.countdown = 600)
+      current_user.countdown(600)
+    end
   end
 
   def cart_count
