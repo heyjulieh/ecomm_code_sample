@@ -21,7 +21,7 @@ items = Item.create([
     fit: "True to size",
     status: "Available",
     price: 75,
-    images: ["https://s-media-cache-ak0.pinimg.com/736x/2d/e9/f8/2de9f8e81b586173874b456a7faca1f5--beanies-streetwear.jpg"],
+    images: ["https://s-media-cache-ak0.pinimg.com/736x/2d/e9/f8/2de9f8e81b586173874b456a7faca1f5--beanies-streetwear.jpg", "https://s-media-cache-ak0.pinimg.com/736x/2d/e9/f8/2de9f8e81b586173874b456a7faca1f5--beanies-streetwear.jpg", "https://s-media-cache-ak0.pinimg.com/736x/2d/e9/f8/2de9f8e81b586173874b456a7faca1f5--beanies-streetwear.jpg"],
     tags: ["hat", "hats", "accessory", "accesories", "supreme", "denim", "cap", "caps", "5-panel", "logo", "s logo"]
   },
   {

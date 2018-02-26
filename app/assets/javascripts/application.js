@@ -22,6 +22,18 @@ $(document).ready(function() {
   else {
    $('.insta-mobile').hide();
   }
+  $('#img2').on('click',function (e){
+    var img1 = $('#img1').attr('src');
+    var img2 = $('#img2').attr('src');
+    $('#img1').attr('src', img2);
+    $('#img2').attr('src', img1);
+  })
+  $('#img3').on('click',function (e){
+    var img1 = $('#img1').attr('src');
+    var img3 = $('#img3').attr('src');
+    $('#img1').attr('src', img3);
+    $('#img3').attr('src', img1);
+  })
 });
 
  $(window).resize(function() {
