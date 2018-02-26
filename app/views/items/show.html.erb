@@ -6,10 +6,13 @@
     </div>
     <div class="col col-sm-6 col-md-6 show-item-info">
       <h3><%= @item.brand %> <span><%= @item.release_year %></span></h3>
-      <h4><%= @item.colorway %> <%= @item.description %></h4><br />
+      <h4><%= @item.colorway %> <%= @item.product_name %></h4><br />
       <h5>$<%= @item.price %></h5>
-      <h5><%= @item.size %></h5>
-      <p><%= @item.new_or_used %>, <%= @item.condition %></p>
+      <h5><%= @item.new_or_used %></h5>
+      <h5>Size: <%= @item.size %></h5>
+      <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
+        <p>Condition: <%= @item.condition %></p>
+      <% end %>
       <p><%= @item.status %></p>
       <%if @item.status == "Selling in Progress"%>
         <p><i>This item will be back on the marketplace<br />if it is not purchased within 10 minutes.</i></p>
@@ -19,6 +22,12 @@
           <span><%=@cart_action%></span> Cart
         <%end%>
       <%end%>
+      <br />
+      <br />
+      <p><b>DESCRIPTION</b><br /><%= @item.description %></p>
+      <% if @item.new_or_used == 'used'|| @item.new_or_used == 'Used' %>
+        <p>Used items are sold as is and not eligible for returns or refunds.<br />Please read the description carefully before purchasing. Thank you.</p>
+      <% end %>
       <% if current_user %>
         <% if current_user.status == 'admin' %>
         <br /><br />

@@ -32,15 +32,14 @@
                 <%= image_tag item.images[0] %>
               <% end %>
             </div>
+            <%= link_to item, class: "item-images" do %>
             <div class="item-info">
-              <%= link_to item, class: "item-images" do %>
-                <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
-                <p><%= item.description %></p>
-                <h6><%= item.size %></h6>
-                <p class="price">$ <%= item.price %></p>
-
-              <% end %>
+              <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
+              <p><%= item.product_name %></p>
+              <h6><%= item.size %></h6>
+              <p class="price">$ <%= item.price %></p>
             </div>
+          <% end %>
           </div>
         </div>
       <% end %>

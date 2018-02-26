@@ -2,22 +2,23 @@
   <% if current_user %>
     <% if current_user.status == 'admin' %>
       <div class="row">
-        <h3 class="subsection">Newsletter Email Subscriptions</h3>
-        <ul>
-          <% @newsletters.each do |newsletter| %>
-              <li>
-                <%= newsletter.email %>
-                <% if current_user %>
-                  <% if current_user.status == 'admin' %>
-                    <div class="pull-right">
-                      <i class="fa fa-pencil"></i> <%= link_to 'Edit This', edit_blog_path(blog) %><br />
-                      <i class="fa fa-times"></i> <%= link_to 'Delete This', blog, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>
-                    </div>
+        <h4>Newsletter Email Subscriptions</h4>
+        <div class="col col-xs-6">
+          <ul>
+            <% @newsletters.each do |newsletter| %>
+                <li>
+                  <%= newsletter.email %>
+                  <% if current_user %>
+                    <% if current_user.status == 'admin' %>
+                      <div class="pull-right">
+                        <i class="fa fa-times"></i> <%= link_to 'Delete This', newsletter, method: :delete, :class => "delete", data: { confirm: 'Are you sure you want to delete this?'} %>
+                      </div>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </li>
-          <% end %>
-        </ul>
+                </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     <% else %>
       <h1 class="access">You do not have access to this page.</h1><br />

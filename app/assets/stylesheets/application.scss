@@ -31,6 +31,10 @@ $gold: #FFDC73;
 .access {
   padding-top: 50px;
 }
+.actions p {
+  color: $light-black;
+  text-align: left !important;
+}
 #error_explanation > h2
  {
    background-color: transparent;
@@ -979,6 +983,9 @@ h3.subsection {
     text-transform: uppercase;
     color: $light-black;
     letter-spacing: 2px;
+  }
+  li {
+    list-style: none;
   }
   .field {
     margin-top: 5px;
