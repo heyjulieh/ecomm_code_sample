@@ -357,6 +357,7 @@ h3.subsection {
       .item-images {
         img {
           position: relative;
+          object-fit: cover;
           display: inline-block;
           height: 150px;
           flex-shrink: 0;
@@ -425,6 +426,7 @@ h3.subsection {
   .large-image-box {
     img {
       width: 100%;
+      object-fit: cover;
     }
   }
   .show-item-info {
