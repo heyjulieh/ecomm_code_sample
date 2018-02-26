@@ -2,13 +2,26 @@
 <div class="container-fluid show wrapper">
   <div class="row">
     <div class="col col-sm-6 col-md-6 large-image-box">
-      <%=image_tag @item.images[0]%>
+      <div class="row">
+        <%=image_tag @item.images[0]%>
+      </div>
+      <div class="row">
+        <div class="col col-xs-6">
+          <%=image_tag @item.images[1]%>
+        </div>
+        <div class="col col-xs-6">
+          <%=image_tag @item.images[2]%>
+        </div>
+
+      </div>
+
     </div>
     <div class="col col-sm-6 col-md-6 show-item-info">
-      <h3><%= @item.brand %> <span><%= @item.release_year %></span></h3>
+      <h3><%= @item.brand %> <span></span></h3>
       <h4><%= @item.colorway %> <%= @item.product_name %></h4><br />
       <h5>$<%= @item.price %></h5>
       <h5><%= @item.new_or_used %></h5>
+      <h5>Release year: <%= @item.release_year %></h5>
       <h5>Size: <%= @item.size %></h5>
       <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
         <p>Condition: <%= @item.condition %></p>
@@ -27,7 +40,7 @@
       <p><b>DESCRIPTION</b><br /><%= @item.description %></p>
       <% if @item.new_or_used == 'used'|| @item.new_or_used == 'Used' %>
         <p>Used items are sold as is and not eligible for returns or refunds.<br />Please read the description carefully before purchasing. Thank you.</p>
-      <% end %>
+        <% end %>
       <% if current_user %>
         <% if current_user.status == 'admin' %>
         <br /><br />
