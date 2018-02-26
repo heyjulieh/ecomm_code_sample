@@ -25,16 +25,16 @@
       </h5>
     <% else %>
       <% @items.each do |item| %>
-        <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="col col-xs-6 col-sm-3">
           <div class="items">
             <div class="image-box">
               <%= link_to item, class: "item-images" do %>
                 <%= image_tag item.images[0] %>
               <% end %>
             </div>
-            <%= link_to item, class: "item-images" do %>
+            <%= link_to item do %>
             <div class="item-info">
-              <h5><%= item.brand %> <span><%= item.release_year %></span></h5>
+              <h5><%= item.brand %></h5>
               <p><%= item.product_name %></p>
               <h6><%= item.size %></h6>
               <p class="price">$ <%= item.price %></p>
