@@ -4,13 +4,14 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',                             # required
     :aws_access_key_id      => 'AKIAJHKGH545PHASA26Q',            # required
     :aws_secret_access_key  => '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',     # required
-    :region                 => 'us-west-2'                        # optional, defaults to 'us-east-1'
+    :region                 => 'us-west-1',                        # optional, defaults to 'us-east-1'
+    :path_style             => true
   }
   config.fog_directory  = 'oddofficialimages'               # required
   #config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
   #config.fog_public     = false                                  # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
-  
+
   # Use local storage if in development or test
   if Rails.env.development? || Rails.env.test?
     CarrierWave.configure do |config|

@@ -23,7 +23,7 @@
           <div class="items">
             <div class="image-box">
               <%= link_to item, class: "item-images"do %>
-                <%= image_tag item.images[0] %>
+                <%= image_tag item.images[0].url %>
               <% end %>
             </div>
             <%= link_to item do %>

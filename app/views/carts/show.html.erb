@@ -14,7 +14,7 @@
         <div class="col col-xs-6 col-sm-2 col-md-2">
           <div class="row">
             <%=link_to item do%>
-              <%=image_tag item.images[0] %>
+              <%=image_tag item.images[0].url %>
             <%end%>
           </div>
         </div>
@@ -28,7 +28,7 @@
       <div class="cart-item row">
         <div class="col col-xs-5 col-sm-4 cart-image">
           <%=link_to item do%>
-            <%=image_tag item.images[0] %>
+            <%=image_tag item.images[0].url %>
           <%end%>
         </div>
         <div class="col col-xs-6 col-sm-6 cart-info">

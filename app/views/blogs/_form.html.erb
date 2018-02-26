@@ -29,9 +29,9 @@
   <% if request.original_fullpath == '/blogs/new' %>
     <div class="field">
       <%= form.label :images %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
-      <%= form.text_area :images, id: :blog_images, multiple: true, value: "" %>
+      <%= form.file_field :images, id: :blog_images, multiple: true, value: "" %>
+      <%= form.file_field :images, id: :blog_images, multiple: true, value: "" %>
+      <%= form.file_field :images, id: :blog_images, multiple: true, value: "" %>
     </div>
 
     <div class="field">
@@ -44,9 +44,9 @@
   <% else %>
   <div class="field">
     <%= form.label :images %>
-    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[0] %>
-    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[1] %>
-    <%= form.text_area :images, id: :blog_images, multiple: true, value: @blog.images[2] %>
+    <%= form.file_field :images, id: :blog_images, multiple: true, value: @blog.images[0] %>
+    <%= form.file_field :images, id: :blog_images, multiple: true, value: @blog.images[1] %>
+    <%= form.file_field :images, id: :blog_images, multiple: true, value: @blog.images[2] %>
   </div>
 
   <div class="field">

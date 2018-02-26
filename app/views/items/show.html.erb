@@ -3,18 +3,18 @@
   <div class="row">
     <div class="col col-sm-6 col-md-6 large-image-box">
       <div class="row">
-        <%=image_tag @item.images[0], class: "big", id: "img1"%>
+        <%=image_tag @item.images[0].url, class: "big", id: "img1"%>
       </div>
       <br />
       <div class="row">
-        <% if @item.images[1] != nil %>
+        <% if @item.images[1].url != nil %>
           <div class="col col-xs-6">
-            <%=image_tag @item.images[1], class: "small", id: "img2"%>
+            <%=image_tag @item.images[1].url, class: "small", id: "img2"%>
           </div>
         <% end %>
-        <% if @item.images[2] != nil %>
+        <% if @item.images[2].url != nil %>
           <div class="col col-xs-6">
-            <%=image_tag @item.images[2], class: "small", id: "img3"%>
+            <%=image_tag @item.images[2].url, class: "small", id: "img3"%>
           </div>
         <% end %>
       </div>
