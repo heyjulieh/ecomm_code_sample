@@ -7,12 +7,12 @@
       </div>
       <br />
       <div class="row">
-        <% if @item.images[1].url != nil || @item.images[1].url != false %>
+        <% if @item.images[1].url != nil || defined? @item.images[1].url != nil %>
           <div class="col col-xs-6">
             <%=image_tag @item.images[1].url, class: "small", id: "img2"%>
           </div>
         <% end %>
-        <% if @item.images[2].url != nil || @item.images[2].url != false %>
+        <% if @item.images[2].url != nil || defined? @item.images[2].url != nil %>
           <div class="col col-xs-6">
             <%=image_tag @item.images[2].url, class: "small", id: "img3"%>
           </div>

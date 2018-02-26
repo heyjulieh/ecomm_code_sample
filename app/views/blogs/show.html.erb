@@ -30,12 +30,12 @@
               <div class="item active show-blog">
                 <%= image_tag @blog.images[0].url %>
               </div>
-              <% if blog.images[1].url != nil || blog.images[1].url != false %>
+              <% if blog.images[1].url != nil || defined? blog.images[1].url != nil %>
                 <div class="item show-blog">
                   <%= image_tag @blog.images[1].url %>
                 </div>
               <% end %>
-              <% if blog.images[2].url != nil || blog.images[2].url != false %>
+              <% if blog.images[2].url != nil || defined? blog.images[2].url != nil %>
                 <div class="item show-blog">
                   <%= image_tag @blog.images[2].url %>
                 </div>
