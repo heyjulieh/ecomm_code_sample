@@ -1,14 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900');
+@import url('https://fonts.googleapis.com/css?family=Creepster|Arvo|Roboto:100,300,400,500,700,900|Cutive+Mono|Nanum+Gothic+Coding:400,700|PT+Mono|Permanent+Marker|Share+Tech+Mono|Space+Mono:400,400i,700,700i');
 
 $light-red: #EB5757;
 $light-black: #222222;
 $jade: #9AC7BA;
 $baby-green: #B5DED5;
 $pale-green: #DFF6EF;
-$gold: #FFDC73;
+$goo-green: #6FCF97;
 
 
 .alert, .notice,  {
@@ -78,7 +78,7 @@ nav.navbar {
   border: 0;
   margin: auto;
   .navbar-header {
-    height: 65px;
+    height: 80px;
     border-bottom: 0px !important;
   }
   .navbar-default, .navbar-collapse {
@@ -90,7 +90,7 @@ nav.navbar {
     margin-bottom: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: $gold;
+    background-color: $goo-green;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     .sign-alert  {
@@ -104,6 +104,8 @@ nav.navbar {
   }
   a {
     text-transform: uppercase;
+    font-family: 'Share Tech Mono', serif;
+    font-weight: 700;
   }
   .navbar-brand, .navbar-brand:visited {
     font-size: 35px;
@@ -113,23 +115,16 @@ nav.navbar {
     padding-top: 25px;
     padding-left: 20px;
     .logo {
-      height: 50px;
+      height: 45px;
       display: inline-block;
     }
   }
   .navbar-brand:hover {
-    color: $gold
-  }
-  a.navbar-nav {
-    display: inline-block;
-    margin: auto;
-    padding: 15px;
-    color: $light-black;
-    text-transform: lowercase;
+    color: $goo-green
   }
   a.navbar-nav:hover {
     text-decoration: none;
-    color: $gold;
+    color: $goo-green;
   }
   a.navbar-nav:visited, a.navbar-nav:active {
     text-decoration: none;
@@ -145,7 +140,7 @@ nav.navbar {
     display: inline-block;
     background-color: $light-black;
     font-weight: 200px !important;
-    color: $gold !important;
+    color: $goo-green !important;
     margin-left: 15px;
     margin-top: 0px;
     padding-top: 5px;
@@ -172,6 +167,7 @@ nav.navbar {
     font-size: 10px;
     top: -10px;
     position:relative;
+    font-family: 'Roboto', sans-serif;
   }
   .cart-count:hover {
     color: $light-black;
@@ -182,9 +178,9 @@ nav.navbar {
     margin-left: 25px;
   }
   .dropdown-menu {
-    background-color: $light-black;
-    color: grey;
-    padding-left: 15px;
+    background-color: white;
+    color: $light-black;
+    padding-left: 25px;
     border: 0px !important;
     border-radius: 0px;
     -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
@@ -193,15 +189,14 @@ nav.navbar {
   .dropdown-menu > li {
     margin: 0px;
     padding-left: 15px;
-
   }
   .dropdown-menu > li > a {
-    color: white;
+    color: $light-black;
     background-color: transparent;
     padding: 0px;
   }
   .dropdown-menu > li > a:hover {
-    color: $gold !important;
+    color: $goo-green !important;
     background-color: transparent;
   }
   .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
@@ -302,6 +297,8 @@ h5 {
   padding-left: 15px;
   font-weight: 500;
   letter-spacing: 1px;
+  font-family: 'Arvo', sans-serif;
+  color: $light-black;
   a, a:visited {
     color: grey;
     padding-bottom: 10px;
@@ -312,6 +309,8 @@ h5 {
   }
 }
 h4 {
+  font-family: 'Share Tech Mono';
+  font-size: 28px;
   padding-bottom: 0px;
   padding-left: 15px;
   margin: auto;
@@ -320,10 +319,11 @@ h4 {
   color: $light-black;
 }
 h3.subsection {
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: 28px;
+  font-family: 'Arvo', serif;
+  letter-spacing: 2px;
+  font-size: 25px;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 .featured {
   background-color: white;
@@ -386,7 +386,7 @@ h3.subsection {
         top: 150px;
         padding-right: 10px;
         padding-left: 10px;
-        background-color: $light-black;
+        background-color: $goo-green;
         color: white;
       }
       a {
@@ -436,6 +436,9 @@ h3.subsection {
     }
 
     h3 {
+      font-family: 'Arvo', serif;
+      font-size: 28px;
+      font-weight: 700;
       text-transform: uppercase;
       color: $light-black;
       letter-spacing: 3px;
@@ -443,10 +446,22 @@ h3.subsection {
     h4 {
       padding-left: 0px;
       margin-left: 0px;
+      font-size: 20px;
     }
     h5 {
+      font-family: 'Share Tech Mono', serif;
       padding-left: 0px;
       margin-left: 0px;
+      font-weight: 400;
+    }
+    b {
+      font-family: 'Share Tech Mono', serif;
+      letter-spacing: 1px;
+    }
+    #price {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
     }
     .btn-danger {
       display: inline-block;
@@ -454,7 +469,7 @@ h3.subsection {
       margin-top: 15px;
       text-transform: uppercase;
       font-weight: 400;
-      background-color: $gold;
+      background-color: $goo-green;
     }
     a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited, a.btn-danger:focus {
       text-decoration: none;
@@ -472,8 +487,8 @@ h3.subsection {
       text-transform: uppercase;
     }
     a, a:visited, a:active {
+      font-family: 'Share Tech Mono', sans-serif;
       color: $light-black;
-      letter-spacing: 1px;
       text-transform: lowercase;
     }
     a:hover {
@@ -484,7 +499,9 @@ h3.subsection {
       text-decoration: line-through;
       color: $light-red;
     }
-
+    i {
+      padding-right: 5px;
+    }
   }
 }
 .form {
@@ -550,7 +567,7 @@ h3.subsection {
     }
 
     .letsgo:hover {
-      color: $gold;
+      color: $goo-green;
     }
     .date {
       margin-bottom: 20px;
@@ -589,7 +606,7 @@ h3.subsection {
       }
 
       input:hover {
-        color: $gold;
+        color: $goo-green;
       }
     }
   }
@@ -675,6 +692,7 @@ h3.subsection {
     letter-spacing: 1px;
   }
   h5.no-items {
+    font-family: 'Share Tech Mono', serif;
     display:inline-block;
     letter-spacing: 1px;
     color: $light-black;
@@ -685,10 +703,10 @@ h3.subsection {
   }
 
   h6.no-items {
+    font-family: 'Share Tech Mono', serif;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 300;
     color: $light-black;
     margin-bottom: 15px;
   }
@@ -745,7 +763,7 @@ h3.subsection {
     }
   }
   .btn {
-    background-color: $gold;
+    background-color: $goo-green;
     color: $light-black;
     text-transform: uppercase;
     font-weight: bold;
@@ -825,7 +843,7 @@ h3.subsection {
     }
     .btn {
       margin-top: 20px;
-      background-color: $gold;
+      background-color: $goo-green;
       border-radius: 0px;
       border: 0px;
       text-transform: uppercase;
@@ -854,25 +872,27 @@ h3.subsection {
       display: inline-block;
       width: 100%;
       height: 300px;
+      font-weight: 300;
     }
   }
   h1 {
-    color: $gold;
+    color: $goo-green;
     background-color: $light-black;
     padding: 10px;
   }
   h4 {
     display: inline-block;
-    height: 65px;
+    height: 100px;
     width: 100%;
-    color: $gold;
+    color: $goo-green;
     background-color: $light-black;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 0px;
   }
   a.title, a.title:active, a.title:visited {
-    color: $gold;
+    font-family: 'Creepster', serif;
+    color: $goo-green;
     text-decoration: none;
   }
   a.title:hover, a.title:focus {
@@ -889,16 +909,17 @@ h3.subsection {
       margin: auto;
     }
     h6 {
+      font-family: 'Share Tech Mono', serif;
       text-transform: uppercase;
-      font-size: 9px;
+      font-size: 10px;
       color: grey;
     }
     .pull-right {
       width: 100%;
       text-align: right;
+      font-family: 'Share Tech Mono', serif;
       a, a:visited, a:active {
         color: $light-black;
-        letter-spacing: 1px;
         text-transform: lowercase;
       }
       a:hover {
@@ -912,15 +933,16 @@ h3.subsection {
     }
     p {
       a, a:active, a:visited {
+        font-family: 'Share Tech Mono', serif;
         text-transform: lowercase;
-        color: $light-red;
+        color: $goo-green;
       }
       a:hover {
         text-decoration: none;
         color: $light-black;
       }
       .fa {
-        color: $light-red;
+        color: $goo-green;
       }
     }
   }
@@ -929,6 +951,9 @@ h3.subsection {
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
+  }
+  .carousel-control {
+    background-image: none;
   }
   .content-area {
   	position: relative;
@@ -955,6 +980,7 @@ h3.subsection {
     padding-bottom: 20px;
     text-align: center;
     .btn {
+      font-family: 'Arvo', sans-serif;
       background-color: $light-black;
       color: white;
       border-radius: 0px;
@@ -965,12 +991,12 @@ h3.subsection {
         font-weight: bold;
       }
       a:hover {
-        color: $gold;
+        color: $goo-green;
         text-decoration: none;
       }
     }
     .btn:hover {
-      color: $gold;
+      color: $goo-green;
     }
   }
 }
@@ -993,7 +1019,7 @@ h3.subsection {
     margin-top: 5px;
     margin-bottom: 10px;
     input, textarea {
-      background-color: $gold;
+      background-color: $goo-green;
       width: 100%;
       border-radius: 0px;
       border: 0px;
@@ -1072,7 +1098,7 @@ footer {
     }
   }
   .social {
-    background-color: $gold;
+    background-color: $goo-green;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 15px;
@@ -1111,16 +1137,17 @@ footer {
       padding-bottom: 15px;
     }
     a, h5 {
+      font-family: 'Share Tech Mono', serif;
       text-transform: uppercase;
-      color: grey;
-      font-size: 12px;
+      color: $light-black;
+      font-size: 14px;
       font-weight: 300;
       padding-left: 0px;
       margin-left: 0px;
       padding-top: 10px;
     }
     a:hover {
-      color: $light-black;
+      color: white;
       text-decoration: none;
     }
     form {
@@ -1134,6 +1161,7 @@ footer {
         font-size: 12px;
       }
       .btn {
+        text-transform: uppercase;
         color: white;
         border-radius: 0px;
         border: 0px;
@@ -1141,7 +1169,7 @@ footer {
         font-size: 12px;
       }
       .btn:hover {
-        color: $gold;
+        color: $goo-green;
       }
     }
   }
@@ -1151,12 +1179,17 @@ footer {
     color: $light-black;
   }
   p {
-    color: grey;
+    color: white;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 10px;
     margin-top: 50px;
-    text-align: right;
-    padding-right: 20px;
+    font-weight: 400;
+  }
+  .powered {
+    text-align: center;
+    font-weight: 200;
+    padding-right: 0px;
+    margin-right: 0px;
   }
 }

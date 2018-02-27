@@ -23,13 +23,10 @@
     <div class="col col-sm-6 show-item-info">
       <h3><%= @item.brand %> <span></span></h3>
       <h4><%= @item.colorway %> <%= @item.product_name %></h4><br />
-      <h5>$<%= @item.price %></h5>
-      <h5><%= @item.new_or_used %></h5>
-      <h5>Release year: <%= @item.release_year %></h5>
+      <h5 id="price">$<%= @item.price %></h5>
       <h5>Size: <%= @item.size %></h5>
-      <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
-        <p>Condition: <%= @item.condition %></p>
-      <% end %>
+
+
       <p><%= @item.status %></p>
       <%if @item.status == "Selling in Progress"%>
         <p><i>This item will be back on the marketplace<br />if it is not purchased within 10 minutes.</i></p>
@@ -41,6 +38,11 @@
       <%end%>
       <br />
       <br />
+      <h5><%= @item.new_or_used %></h5>
+      <h5>Release year: <%= @item.release_year %></h5>
+      <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
+        <p>Condition: <%= @item.condition %></p>
+      <% end %>
       <p><b>DESCRIPTION</b><br /><%= @item.description %></p>
       <% if @item.new_or_used == 'used'|| @item.new_or_used == 'Used' %>
         <p>Used items are sold as is and not eligible for returns or refunds.<br />Please read the description carefully before purchasing. Thank you.</p>
