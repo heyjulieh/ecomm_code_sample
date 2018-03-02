@@ -13,8 +13,14 @@
         <span class="icon-bar middle-bar"></span>
         <span class="icon-bar bottom-bar"></span>
       </button>
-      <%= link_to cart_path, :class => "pull-right navbar-brand" do%>
-        <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=current_user.cart_count%></span>
+      <% if current_user %>
+        <%= link_to cart_path, :class => "pull-right navbar-brand" do%>
+          <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=current_user.cart_count%></span>
+        <% end %>
+      <% elsif guest_user %>
+        <%= link_to cart_path, :class => "pull-right navbar-brand" do%>
+          <i class="fa fa-shopping-basket"></i><span class="cart-count"><%=guest_user.cart_count%></span>
+        <% end %>
       <% end %>
       <a class="navbar-brand" href="/"><img class="logo" src="<%= asset_path( 'oo_creeplogo.png' ) %>" /></a></a>
     </div>

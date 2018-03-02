@@ -466,6 +466,7 @@ h3.subsection {
       font-size: 18px;
     }
     .btn-danger {
+      font-family: 'Arvo', serif;
       display: inline-block;
       padding: 10px;
       margin-top: 15px;
@@ -478,6 +479,7 @@ h3.subsection {
       color: $light-black;
     }
     .btn {
+      font-family: 'Arvo', serif;
       display: inline-block;
       background-color: $light-black;
       color: white;
@@ -521,7 +523,9 @@ h3.subsection {
     font-weight: 700;
   }
   h3 {
+    font-family: 'Arvo', serif;
     padding-bottom: 20px;
+    letter-spacing: 1px;
   }
 
   label {
@@ -557,6 +561,7 @@ h3.subsection {
     }
 
     .letsgo {
+      font-family: 'Arvo', serif;
       color: white;
       background-color: $light-black;
       border-radius: 0px;
@@ -595,13 +600,13 @@ h3.subsection {
     .actions {
       padding: 0;
       input {
+        font-family: 'Arvo', serif;
         color: white;
         background-color: $light-black;
         border: 0px;
         border-radius: 0px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-weight: bold;
         padding: 10px;
         margin-bottom: 30px;
         margin-top: 20px;
@@ -655,7 +660,9 @@ h3.subsection {
       font-size: 10px;
     }
     .btn {
-      color: black;
+      font-family: 'Arvo', serif;
+      text-transform: uppercase;
+      color: $light-black;
       border-radius: 0px;
       border-bottom: 1px solid lightgrey;
       width: 90px;
@@ -666,7 +673,7 @@ h3.subsection {
       text-align: left;
     }
     .btn:hover {
-      color: $light-black;
+      color: grey;
     }
   }
 }
@@ -682,6 +689,11 @@ h3.subsection {
       margin: auto;
       padding: auto;
     }
+  }
+  p.review {
+    letter-spacing: 1px;
+    font-family: 'Share Tech Mono', serif;
+    font-weight: 200;
   }
   h3 {
     font-family: 'Arvo', serif;
@@ -766,12 +778,16 @@ h3.subsection {
     }
   }
   .btn {
+    font-family: 'Arvo', serif;
     background-color: $goo-green;
     color: $light-black;
     text-transform: uppercase;
     font-weight: bold;
     border-radius:0px;
     border: 0px;
+  }
+  .btn:hover {
+    color: grey;
   }
   .pull-right {
     text-align: right;
@@ -845,6 +861,7 @@ h3.subsection {
       }
     }
     .btn {
+      font-family: 'Arvo', serif;
       margin-top: 20px;
       background-color: $goo-green;
       border-radius: 0px;
@@ -854,7 +871,7 @@ h3.subsection {
       font-size: 12px;
     }
     .btn:hover {
-      color: $light-red;
+      color: grey;
     }
   }
 }
@@ -1038,6 +1055,7 @@ h3.subsection {
     }
   }
   .btn {
+    font-family: 'Arvo', serif;
     background-color: $light-black;
     color: white;
     letter-spacing: 1px;
@@ -1046,6 +1064,9 @@ h3.subsection {
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+  .btn:hover {
+    color: grey;
   }
   a, a:visited, a:active {
     color: $light-black;
@@ -1164,6 +1185,7 @@ footer {
         font-size: 12px;
       }
       .btn {
+        font-family: 'Arvo', serif;
         text-transform: uppercase;
         color: white;
         border-radius: 0px;

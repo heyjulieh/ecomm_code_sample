@@ -37,20 +37,20 @@
             <i class="fa fa-times-circle pull-right"></i>
           <%end%>
 
-            <h4> <%= item.brand %> <%= item.release_year %></h4>
+            <h4> <%= item.brand %></h4>
           <%end%>
           <p><%= item.colorway %> <%= item.product_name %></p>
-          <p><%= item.size %></p>
-          <p>$ <%= item.price %></p><br />
+          <p>Size: <%= item.size %></p>
+          <p><b>$ <%= item.price %></b></p>
         </div>
-      </div><br /><br />
+      </div><br /><br /><br />
       <%end%>
     </div>
 
     <div class="col col-sm-6 pull-right">
       <% if current_user.cart_count != 0%>
         <h5>Total amount: $<span class="cart-money"><%=current_user.cart_total_price %></span></h5><br />
-        <p>Review your order <br />& confirm payment <br />on the next page.<br /></p><br />
+        <p class="review">Review your order<br />& confirm payment<br />on the next page.</p><br /><br />
         <%=link_to "Checkout", new_transaction_path, class: "btn btn-danger" %>
       <% end %>
     </div>
