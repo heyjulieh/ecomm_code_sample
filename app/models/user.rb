@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :items, through: :purchases
 
   def new
-    super
+    super || guest_user
   end
   def add
     item = Item.find params[:item_id]

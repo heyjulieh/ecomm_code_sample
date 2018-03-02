@@ -22,8 +22,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-
   private
 
   def guest_user
@@ -34,13 +32,13 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def transfer_guest_user_records_to_logged_in_user
-    guest_items = @guest_cart_items.all
-    guest_items.each do |item|
-      guest_cart_ids = cart_ids
-      item.save!
-    end
-  end
+  # def transfer_guest_user_records_to_logged_in_user
+  #   guest_items = @guest_cart_items.all
+  #   guest_items.each do |item|
+  #     guest_cart_ids = cart_ids
+  #     item.save!
+  #   end
+  # end
 
   def create_guest_user
     u = User.create(:first_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@example.com")
