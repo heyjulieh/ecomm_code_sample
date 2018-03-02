@@ -16,6 +16,7 @@ $goo-green: #6FCF97;
   letter-spacing: 1px;
   font-size: 16px;
   color: $light-red;
+
   padding-top: 180px;
   padding-bottom: 30px;
   padding-left: 0px !important;
@@ -94,6 +95,7 @@ nav.navbar {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     .sign-alert  {
+      font-family: 'Share Tech Mono', serif;
       display: inline-block;
       text-align: center;
       padding: auto;
@@ -286,7 +288,7 @@ nav.navbar {
 
 .subsection {
   padding-bottom: 50px;
-  padding-top: 200px;
+  padding-top: 230px;
   padding-left: 15px;
   margin: auto;
   text-transform: lowercase;
@@ -669,7 +671,7 @@ h3.subsection {
   }
 }
 .mycart {
-  padding-top: 180px;
+  padding-top: 210px;
   padding-bottom: 50px;
   background-color: white;
   .sample {
@@ -682,6 +684,7 @@ h3.subsection {
     }
   }
   h3 {
+    font-family: 'Arvo', serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: $light-black
