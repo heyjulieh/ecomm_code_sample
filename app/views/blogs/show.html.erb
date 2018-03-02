@@ -1,4 +1,3 @@
-<!-- <%= render "layouts/jumbotron-blog" %> -->
 
 <div class="container-fluid blog wrapper">
   <% if current_user %>
@@ -10,12 +9,12 @@
       </div>
     <% end %>
   <% end %>
-  <div class="blog-content">
+  <div class="blog-item">
     <div class="row">
       <div class= "col col-sm-2">
       </div>
       <div class="col col-sm-8">
-        <h1><%= @blog.title %></h1>
+        <h4 class="title"><%= @blog.title %></h4>
         <div class="content-area">
           <div id="<%= @blog.id%>" class="carousel slide">
             <!-- Indicators -->
@@ -27,19 +26,16 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-              <div class="item active show-blog">
-                <%= image_tag @blog.images[0].url %>
+              <div class="item active blog-index" style="background-image: url(<%= @blog.images[0].url %>)">
               </div>
-              <% if defined? blog.images[1].url != nil %>
-                <div class="item show-blog">
-                  <%= image_tag @blog.images[1].url %>
+              <% if defined? @blog.images[1].url != nil %>
+                <div class="item blog-index" style="background-image: url(<%= @blog.images[1].url %>)">
                 </div>
               <% end %>
-              <% if defined? blog.images[2].url != nil %>
-                <div class="item show-blog">
-                  <%= image_tag @blog.images[2].url %>
+              <% if defined? @blog.images[2].url != nil %>
+                <div class="item blog-index" style="background-image: url(<%= @blog.images[2].url %>)">
                 </div>
-              <% end %>
+                <% end %>
             </div>
           </div>
 
@@ -76,4 +72,4 @@
     </div>
   </div>
 </div>
-<%= render "layouts/footer" %>
+<%= render "layouts/footer_simple" %>
