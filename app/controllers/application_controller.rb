@@ -36,10 +36,11 @@ class ApplicationController < ActionController::Base
 
   def transfer_guest_user_records_to_logged_in_user
     if current_user_cart
-      guest_user_cart = current_user_cart
-      guest_cart_ids = cart_ids
-      @guest_cart_items = @cart_items
-      @cart_items.save!
+      guest_user_cart = guest_user_cart
+      @guest_cart_items.each do |cart_item|
+        guest_cart_ids = cart_ids
+        cart_item.save!
+      end
       guest_user_cart.destroy
     else
       shopping_cart = guest_user_cart
