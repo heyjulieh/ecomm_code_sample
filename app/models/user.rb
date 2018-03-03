@@ -3,11 +3,12 @@ class User < ApplicationRecord
   has_many :items, through: :purchases
 
   def new
-    super || guest_user
+    super
   end
   def add
     item = Item.find params[:item_id]
     if current_user && item.quantity > 0
+      p 'Current User added item to cart from User.rb'
       $redis.sadd current_user_cart, params[:item_id]
       render json: current_user.cart_count, status: 200
       item.update_columns(quantity: item.quantity - 1)
@@ -15,6 +16,7 @@ class User < ApplicationRecord
       item.update_columns(countdown: item.countdown = 600)
       current_user.countdown(600)
     elsif guest_user && item.quantity > 0
+      p 'Guest User added item to cart from User.rb'
       $redis.sadd guest_user_cart, params[:item_id]
       render json: guest_user.cart_count, status: 200
       item.update_columns(quantity: item.quantity - 1)
