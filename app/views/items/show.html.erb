@@ -24,7 +24,7 @@
       <h3><%= @item.brand %></h3>
       <h4><%= @item.colorway %> <%= @item.product_name %></h4><br />
       <h5 id="price">$<%= @item.price %></h5>
-      <h5>Size: <%= @item.size %></h5>
+      <h5>Size: <%= @item.size %></h5><br />
 
       <%if @item.status == "Selling in Progress"%>
         <p><i>This item will be back on the marketplace<br />if it is not purchased within 10 minutes.</i></p>
@@ -34,6 +34,8 @@
           <span><%=@cart_action%></span> Cart
         <%end%>
       <%end%>
+      <br />
+      <br />
       <br />
       <br />
       <h4><b><%= @item.new_or_used %></b></h4>
