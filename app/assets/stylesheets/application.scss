@@ -65,9 +65,17 @@ $goo-green: #6FCF97;
 .exception {
   padding-top: 150px;
   text-align: center;
-  h5 {
-    padding-bottom: 15px;
-    border-bottom: 1px solid lightgrey;
+  .btn {
+    font-family: 'Arvo', serif;
+    display: inline-block;
+    background-color: $light-black;
+    color: white;
+    font-weight: 200;
+    border-radius: 0;
+    letter-spacing: 1px;
+  }
+  .btn:hover {
+    color: $goo-green;
   }
   img {
     width: 200px;
