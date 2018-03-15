@@ -40,7 +40,7 @@
       <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
         <h5>Condition: <%= @item.condition %><h5>
       <% end %>
-      <h5>Release year: <%= @item.release_year %></h5>
+      <h5>Release year: <%= @item.release_year %></h5><br /><br />
       <p><b>Description</b><br /><%= @item.description %></p><br />
       <% if @item.new_or_used == 'used'|| @item.new_or_used == 'Used' %>
         <p>Used items are sold as is and not eligible for returns or refunds.<br />Please read the description carefully before purchasing. Thank you.</p>

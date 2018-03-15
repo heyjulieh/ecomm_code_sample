@@ -460,6 +460,7 @@ h3.subsection {
     i {
       color: grey;
       font-weight: 200;
+      padding-right: 5px;
     }
 
     h3 {
@@ -480,6 +481,10 @@ h3.subsection {
       padding-left: 0px;
       margin-left: 0px;
       font-weight: 400;
+    }
+    p {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
     }
     b {
       text-transform: uppercase;
@@ -529,9 +534,6 @@ h3.subsection {
     .delete:hover {
       text-decoration: line-through;
       color: $light-red;
-    }
-    i {
-      padding-right: 5px;
     }
   }
 }
