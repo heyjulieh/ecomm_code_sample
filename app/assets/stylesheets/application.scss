@@ -57,7 +57,7 @@ $goo-green: #6FCF97;
    display: none;
 }
 .wrapper {
-  min-height: 90vh;
+  min-height: 75vh;
   height: auto !important;
   height: 100%;
   margin-bottom: 40px;
@@ -456,6 +456,7 @@ h3.subsection {
       font-weight: 400;
     }
     b {
+      text-transform: uppercase;
       font-family: 'Share Tech Mono', serif;
       letter-spacing: 1px;
     }
@@ -1081,12 +1082,14 @@ h3.subsection {
   a:hover {
     color: $light-red;
   }
-
 }
 
 footer {
   padding: 0px;
   margin: 0px;
+  h4 {
+    padding-bottom: 20px;
+  }
   .container {
     padding: 0px;
     margin: 0px;

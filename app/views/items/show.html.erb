@@ -9,12 +9,12 @@
       <div class="row">
         <% if defined? @item.images[1].url != nil %>
           <div class="col col-xs-6">
-            <%=image_tag @item.images[1].url, class: "small", id: "img2"%>
+            <%=image_tag @item.images[1].url, class:"small", id:"img2"%>
           </div>
         <% end %>
         <% if defined? @item.images[2].url != nil %>
           <div class="col col-xs-6">
-            <%=image_tag @item.images[2].url, class: "small", id: "img3"%>
+            <%=image_tag @item.images[2].url, class:  "small", id: "img3"%>
           </div>
         <% end %>
       </div>
@@ -36,12 +36,12 @@
       <%end%>
       <br />
       <br />
-      <h5><b><%= @item.new_or_used %></b></h5>
+      <h4><b><%= @item.new_or_used %></b></h4>
       <% if @item.new_or_used == 'used' || @item.new_or_used == 'Used' %>
-        <p>Condition: <%= @item.condition %></p>
+        <h5>Condition: <%= @item.condition %><h5>
       <% end %>
       <h5>Release year: <%= @item.release_year %></h5>
-      <p><b>DESCRIPTION</b><br /><%= @item.description %></p>
+      <p><b>Description</b><br /><%= @item.description %></p><br />
       <% if @item.new_or_used == 'used'|| @item.new_or_used == 'Used' %>
         <p>Used items are sold as is and not eligible for returns or refunds.<br />Please read the description carefully before purchasing. Thank you.</p>
         <% end %>

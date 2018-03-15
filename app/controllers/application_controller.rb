@@ -37,6 +37,11 @@ class ApplicationController < ActionController::Base
     guest_user_cart = current_user_cart
     guest_user.cart_count = current_user.cart_count
     guest_user.cart_total_price = current_user.cart_total_price
+    @guest_cart_items.each do |item|
+      item = Item.find params[:item_id]
+      $redis.sadd current_user_cart, params[:item_id]
+      render json: current_user.cart_count, status: 200
+    end
   end
 
   def create_guest_user
