@@ -466,7 +466,7 @@ h3.subsection {
       font-weight: 700;
       font-size: 18px;
     }
-    .btn-danger {
+    .btn-danger, a.btn-danger:active, a.btn-danger:visited {
       font-family: 'Arvo', serif;
       display: inline-block;
       padding: 10px;
@@ -475,9 +475,10 @@ h3.subsection {
       font-weight: 400;
       background-color: $goo-green;
     }
-    a.btn-danger:hover, a.btn-danger:active, a.btn-danger:visited, a.btn-danger:focus {
+    a.btn-danger:hover, a.btn-danger:focus {
       text-decoration: none;
-      color: $light-black;
+      color: white;
+      background-color: $light-black
     }
     .btn {
       font-family: 'Arvo', serif;
@@ -962,14 +963,19 @@ h3.subsection {
       }
     }
     p {
-      a, a:active, a:visited {
+      a, a:active, a:visited, a:focus {
         font-family: 'Share Tech Mono', serif;
         text-transform: lowercase;
         color: $goo-green;
+        padding-left: 2px;
+        padding-right: 2px;
+        text-decoration: none;
       }
       a:hover {
         text-decoration: none;
         color: $light-black;
+        padding-left: 3px;
+        padding-right: 3px;
       }
       .fa {
         color: $goo-green;
