@@ -993,6 +993,9 @@ h3.subsection {
   }
   .show-blog {
     height: 50vh;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .carousel-indicators li {
   border-radius: 50%;
