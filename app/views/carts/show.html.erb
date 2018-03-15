@@ -1,8 +1,5 @@
 
 <div id="mycart" class="container-fluid mycart">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <h3>Your Cart</h3>
   <p class="cart-amount">Total Items In Your Cart: <span id="cart-count" class="cart-count"><%=current_user.cart_count%></span></p>
   <% if current_user.cart_count==0 %>

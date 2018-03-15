@@ -87,4 +87,8 @@ class User < ApplicationRecord
    "cart#{current_user.id}"
   end
 
+  def guest_user_cart
+   "cart#{guest_user.id}"
+  end
+
 end

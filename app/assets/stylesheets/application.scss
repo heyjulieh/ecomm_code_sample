@@ -707,7 +707,7 @@ h3.subsection {
       text-align: left;
     }
     .btn:hover {
-      color: grey;
+      color: $goo-green;
     }
   }
 }
@@ -821,7 +821,7 @@ h3.subsection {
     border: 0px;
   }
   .btn:hover {
-    color: grey;
+    color: white;
   }
   .pull-right {
     text-align: right;
@@ -1198,6 +1198,20 @@ footer {
       }
       .icons {
         text-align: center;
+        h5 {
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          text-align: left;
+        }
+        p {
+          margin-top: 0;
+          padding-top: 0;
+          text-align: left;
+          color: $light-black;
+          font-weight: 500;
+          padding-bottom: 20px;
+        }
       }
       .content {
         text-align: left;
