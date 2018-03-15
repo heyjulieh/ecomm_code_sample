@@ -998,13 +998,17 @@ h3.subsection {
     background-size: cover;
   }
   .carousel-indicators li {
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
   }
   .carousel-indicators .active {
-  height: 25px;
-  width: 25px;
+    height: 15px;
+    width: 15px;
+  }
+  .carousel-indicators li {
+    height: 10px;
+    width: 10px;
   }
   .new-post {
     padding-bottom: 20px;
