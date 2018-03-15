@@ -63,8 +63,12 @@ $goo-green: #6FCF97;
   margin-bottom: 40px;
 }
 .exception {
-  padding-top: 40vh;
+  padding-top: 30vh;
   text-align: center;
+  h4 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid lightgrey;
+  }
   img {
     width: 200px;
   }
