@@ -73,9 +73,14 @@ $goo-green: #6FCF97;
     font-weight: 200;
     border-radius: 0;
     letter-spacing: 1px;
+    a {
+      color: white;
+      text-transform: uppercase;
+    }
   }
-  .btn:hover {
+  .btn:hover a {
     color: $goo-green;
+    text-decoration: none;
   }
   img {
     width: 200px;
