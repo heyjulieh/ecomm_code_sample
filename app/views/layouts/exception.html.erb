@@ -2,14 +2,48 @@
 <html>
   <!-- Head -->
   <head>
-    <%= content_tag :title, "Error - #{@exception.status} (#{@exception.response.to_s.gsub("_", " ").titleize})" %>
-    <%= stylesheet_link_tag :exception_handler %>
-    <%= favicon_link_tag %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Place this data between the <head> tags of your website -->
+    <meta name="description" content="The Odd Official: Officially Sponsoring Resells 24/7" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="The Odd Official">
+    <meta itemprop="description" content="The Odd Official: Officially Sponsoring Resells 24/7">
+    <meta itemprop="image" content="./assets/images/gum_screenshot.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="article">
+    <meta name="twitter:title" content="The Odd Official">
+    <meta name="twitter:description" content="The Odd Official: Officially Sponsoring Resells 24/7">
+    <meta name="twitter:image" content="./assets/images/gum_screenshot.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="The Odd Official" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jowljabber.heroku.com/" />
+    <meta property="og:image" content="./assets/images/gum_screenshot.png" />
+    <meta property="og:description" content="The Odd Official: Officially Sponsoring Resells 24/7" />
+    <meta property="og:site_name" content="The Odd Official" />
+
+    <%= favicon_link_tag asset_path('oo_target.png'), :rel => 'icon', :type =>  'image/png' %>
+    <title><%= content_for?(:title) ? yield(:title) : "The Odd Official" %></title>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= csrf_meta_tags %>
   </head>
 
   <!-- Body -->
-  <h4>Please excuse the error on this page.</h4>
-  <h5><a href="/">Head back to the main page while we fix this error.</a></h5>
+  <div class="container-fluid">
+    <div class="col col-xs-3">
+    </div>
+    <div class="col col-xs-6">
+      <h4>Please excuse the error on this page.</h4>
+      <h5><a href="/">Head back to the main page while we fix this error.</a></h5>
+    </div>
+    <div class="col col-xs-3">
+    </div>
+  </div>
 
   <!-- Footer -->
   <%= render 'layouts/footer_no_newsletter' %>
