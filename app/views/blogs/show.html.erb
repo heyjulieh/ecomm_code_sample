@@ -26,14 +26,14 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-              <div class="item active blog-index" style="background-image: url(<%= @blog.images[0].url %>)">
+              <div class="item active show-blog" style="background-image: url(<%= @blog.images[0].url %>)">
               </div>
               <% if defined? @blog.images[1].url != nil %>
-                <div class="item blog-index" style="background-image: url(<%= @blog.images[1].url %>)">
+                <div class="item show-blog" style="background-image: url(<%= @blog.images[1].url %>)">
                 </div>
               <% end %>
               <% if defined? @blog.images[2].url != nil %>
-                <div class="item blog-index" style="background-image: url(<%= @blog.images[2].url %>)">
+                <div class="item show-blog" style="background-image: url(<%= @blog.images[2].url %>)">
                 </div>
                 <% end %>
             </div>
