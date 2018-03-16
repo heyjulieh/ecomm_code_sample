@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-  <!-- Head -->
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +25,7 @@
     <meta property="og:description" content="The Odd Official: Officially Sponsoring Resells 24/7" />
     <meta property="og:site_name" content="The Odd Official" />
 
+
     <%= favicon_link_tag asset_path('oo_target.png'), :rel => 'icon', :type =>  'image/png' %>
     <title><%= content_for?(:title) ? yield(:title) : "The Odd Official" %></title>
     <%= javascript_include_tag "application" %>
@@ -34,19 +34,21 @@
   </head>
 
   <!-- Body -->
-  <div class="container-fluid wrapper exception">
+  <div class="exception wrapper container-fluid">
     <div class="col col-xs-3">
     </div>
     <div class="col col-xs-6">
-      <img src="<%= asset_path( 'oo_creeplogo.png' ) %>" /><br /><br />
-      <h4>Oh crap, an error. We'll fix this soon.</h4><br />
-      <button class="btn"><a href="/">Head back to the main page in the mean time.</a></button><br /><br />
-      <img src="https://image.flaticon.com/icons/png/512/238/238296.png" /><br />
+      <img src="<%= asset_path( 'oo_creeplogo.png' ) %>"><br /><br /><br />
+        <%= content_tag :body, yield %>
+      <h4>Oh crap, an error. We'll fix this soon</h4><br />
+      <button class="btn">
+        <a href="/">Head back to the main page in the mean time.</a><br />
+      </button><br /><br /><br />
+      <img src="https://image.flaticon.com/icons/png/512/238/238296.png">
     </div>
-    <div class="col col-xs-3">
+    <div class="col-xs-3">
     </div>
   </div>
-
   <!-- Footer -->
   <%= render 'layouts/footer_no_newsletter' %>
 </html>
