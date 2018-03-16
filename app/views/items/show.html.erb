@@ -33,9 +33,11 @@
         <%=link_to "", class: "btn-danger addcart", data: {target: @cart_action, addUrl: add_to_cart_path(@item), removeUrl: remove_from_cart_path(@item)} do%>
           <span><%=@cart_action%></span> Cart
         <%end%>
+      <br />
+      <br />
+      <% elsif @item.status == "SOLD" %>
+        <h4 class="sold"><%= @item.status %></h4>
       <%end%>
-      <br />
-      <br />
       <br />
       <br />
       <h4><b><%= @item.new_or_used %></b></h4>

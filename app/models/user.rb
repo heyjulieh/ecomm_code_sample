@@ -7,22 +7,13 @@ class User < ApplicationRecord
   end
   def add
     item = Item.find params[:item_id]
-    if current_user && item.quantity > 0
-      p 'Current User added item to cart from User.rb'
+    if item.quantity > 0
       $redis.sadd current_user_cart, params[:item_id]
       render json: current_user.cart_count, status: 200
       item.update_columns(quantity: item.quantity - 1)
       item.update_columns(status: item.status = "Selling in Progress")
-      item.update_columns(countdown: item.countdown = 600)
-      current_user.countdown(600)
-    elsif guest_user && item.quantity > 0
-      p 'Guest User added item to cart from User.rb'
-      $redis.sadd guest_user_cart, params[:item_id]
-      render json: guest_user.cart_count, status: 200
-      item.update_columns(quantity: item.quantity - 1)
-      item.update_columns(status: item.status = "Selling in Progress")
-      item.update_columns(countdown: item.countdown = 600)
-      guest_user.countdown(600)
+      item.update_columns(countdown: item.countdown = 20)
+      current_user.countdown(20)
     end
   end
 
@@ -86,9 +77,4 @@ class User < ApplicationRecord
   def current_user_cart
    "cart#{current_user.id}"
   end
-
-  def guest_user_cart
-   "cart#{guest_user.id}"
-  end
-
 end
