@@ -9,7 +9,7 @@
           <p class="mbs">You are paying for <%=current_user.cart_count%> items.</p>
           <p class="mbs">Total amount: $<%=current_user.cart_total_price%>.</p>
         </div>
-        <div class="col col-xs-7 summary">
+        <div class="col col-xs-12 col-sm-5 summary">
           <% @cart_items.each do |item|%>
             <%=link_to item do%>
               <h4> <%= item.brand %> <%= item.release_year %></h4>
@@ -19,7 +19,7 @@
             <p>$ <%= item.price %></p>
           <% end %>
         </div>
-        <div class="col col-xs-5 pay_info">
+        <div class="col col-xs-12 col-sm-7 pay_info">
           <%= form_tag transactions_path do%>
             <p>Please enter your billing information:</p>
             <div id="dropin"></div>

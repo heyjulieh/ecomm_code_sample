@@ -1,5 +1,7 @@
-<p>Thanks for signing up <%= @email %>!</p>
+<h4>Welcome to the Odd Official!</h4><br />
+
+<p>Thanks for signing up!</p>
 
 <p>You can confirm your new account's email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), {:style=>'text-decoration:none; color:#6FCF97;'} %></p>

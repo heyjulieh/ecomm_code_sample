@@ -42,13 +42,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_field :condition, id: :item_condition %>
+    <%= form.label :new_or_used %>
+    <%= form.text_field :new_or_used, id: :item_new_or_used %>
   </div>
 
   <div class="field">
-    <%= form.label :new_or_used %>
-    <%= form.text_field :new_or_used, id: :item_new_or_used %>
+    <%= form.label :condition %>
+    <%= form.text_field :condition, id: :item_condition %>
   </div>
 
   <div class="field">
@@ -69,9 +69,9 @@
   <% if request.original_fullpath == '/items/new' %>
     <div class="field">
       <%= form.label :images %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: "" %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: "" %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: "" %>
     </div>
 
     <div class="field">
@@ -85,9 +85,9 @@
   <% else %>
     <div class="field">
       <%= form.label :images %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: @item.images[0] %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: @item.images[1] %>
-      <%= form.file_field :images, id: :item_images, multiple: true, value: @item.images[2] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[0] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[1] %>
+      <%= form.text_area :images, id: :item_images, multiple: true, value: @item.images[2] %>
     </div>
 
     <div class="field">
