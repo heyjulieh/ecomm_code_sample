@@ -1,7 +1,11 @@
 <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
     <%= image_tag ("oo_creeplogo.png")%><br />
-    <%= content_tag :h3, @exception.description.html_safe %><br />
-    <%= content_tag :h5, "Crap, an error! We'll fix this soon." %><br />
+    <% if @exception.description.html_safe.include? "40" %>
+      <%= content_tag :h5, "This page does not exist." %><br />
+    <% else %>
+      <%= content_tag :h3, @exception.description.html_safe %><br />
+      <%= content_tag :h5, "Crap, an error! We'll fix this soon." %><br />
+    <% end %>
     <%= link_to "Head back to the main page in the mean time.", root_path, class:"btn" %> <br /><br />
     <%= image_tag ("poopmonster.svg")%><br />
 <% end %>
