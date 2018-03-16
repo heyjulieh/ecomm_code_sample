@@ -1,12 +1,3 @@
-<%= content_tag :div, class: ["exception", "wrapper"], data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
-    <%= content_tag :div, class:"col-xs-3" %>
-    <%= content_tag :div, class:"col-xs-6" %>
-      <%= content_tag :img, src:"<%= asset_path( 'oo_creeplogo.png' ) %>" %>
-      <%= content_tag :span, @exception.description.html_safe "ERROR"%>
-      <%= content_tag :h4, "Oh crap, an error. We'll fix this soon." %>
-      <%= content_tag :button, class:"btn" do %>
-        <%= content tag :a, href:"/", "Head back to the main page in the mean time." %>
-      <% end %>
-      <%= content_tag :img, src:"https://image.flaticon.com/icons/png/512/238/238296.png" %>
-    <%= content_tag :div, class:"col-xs-3" %>
+<%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status == "500" && Rails.application.routes.recognize_path("/")), title: ("Return Home" if @exception.status == "500" && Rails.application.routes.recognize_path("/")) do %>
+    <%= content_tag :span, @exception.description.html_safe%>
 <% end %>
